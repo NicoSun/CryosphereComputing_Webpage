@@ -16,18 +16,19 @@ body {font-family: "Lato", sans-serif}
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    <a href="#band" class="w3-bar-item w3-button w3-padding-large w3-hide-small">NRT Data</a>
-    <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">AMSR2 Snow & Ice Volume</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Albedo-Warming Potential (AWP)</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Documentation</a>
     <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>     
+      <button href="index.html" class="w3-padding-large w3-button" title="HOME">HOME <i class="fa fa-caret-down"></i></button>     
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">Stuff</a>
-        <a href="#" class="w3-bar-item w3-button">Extras</a>
-        <a href="#" class="w3-bar-item w3-button">More Stuff</a>
+        <a href="#top" class="w3-bar-item w3-button">NRT data</a>
+        <a href="#Arctic" class="w3-bar-item w3-button">Arctic</a>
+        <a href="#Antarctic" class="w3-bar-item w3-button">Antarctic</a>
+        <a href="#Snow" class="w3-bar-item w3-button">Snow</a>
+        <a href="#FDD" class="w3-bar-item w3-button">FDD</a>
       </div>
+    </div>
+    <a href="SIT.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">AMSR2 Snow & Ice Volume</a>
+    <a href="https://sites.google.com/site/cryospherecomputing/awp" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Albedo-Warming Potential (AWP)</a>
+    <a href="https://sites.google.com/site/cryospherecomputing/documentation" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Documentation</a>
     </div>
     <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
   </div>
@@ -35,30 +36,32 @@ body {font-family: "Lato", sans-serif}
 
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
 <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="#band" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">NRT Data</a>
-  <a href="#tour" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">TOUR</a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">CONTACT</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">MERCH</a>
+  <a href="SIT.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">AMSR2 Snow & Ice Volume</a>
+  <a href="https://sites.google.com/site/cryospherecomputing/awp" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Albedo-Warming Potential (AWP)</a>
+  <a href="https://sites.google.com/site/cryospherecomputing/documentation" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Documentation</a>
 </div>
 
   <!-- The Band Section -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
-    <h2 class="w3-wide">CryosphereComputing</h2>
-    <p class="w3-opacity"><i>It's all about ice</i></p>
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="top">
+    <h1 class="w3-wide">CryosphereComputing</h1>
+    <p class="w3-opacity"><i>It's all about the ice</i></p>
     <p class="w3-justify">The Website is dedicated to monitoring and analysing changes in the polar regions. It is still under early development and will undergo several content updates.</p>
     </div>
   </div>
   
-  <!-- NRT Images -->
   
+  <!-- NRT Images -->
+
     <!-- The Arctic Sea Ice -->
-  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="band">
-    <h2 class="w3-wide">Arctic Sea Ice</h3>
-    <p class="w3-justify">interesting info.</p>
+  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="Arctic">
+    <h2 class="w3-wide">Arctic Sea Ice</h2>
     <div class="w3-row w3-padding-32">
       <div class="w3-third">
         <img src="https://drive.google.com/uc?id=0B1HTR0ONiUmEcHhMS3B6cmwwdUk&export=download class="w3-round" style="width:100%">
+        <div class="w3-left-align">lowests minimums: 2.241 (2012), 2.477 (2016)</div>
+        <div class="w3-left-align">lowests maximums = 12.668 (2016), 12.761 (2017)</div>
       </div>
+
       <div class="w3-third">
         <img src="https://drive.google.com/uc?id=0B1HTR0ONiUmEVjR5MWlTLWF1UW8&export=download" class="w3-round" style="width:100%">
       </div>
@@ -69,12 +72,15 @@ body {font-family: "Lato", sans-serif}
   </div>
 
     <!-- The Antarctic Sea Ice -->
-  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="band">
-    <h2 class="w3-wide">Antarctic Sea Ice</h3>
-    <p class="w3-justify">interesting info.</p>
+  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="Antarctic">
+    <h2 class="w3-wide">Antarctic Sea Ice</h2>
     <div class="w3-row w3-padding-12">
       <div class="w3-third">
         <img src="https://drive.google.com/uc?id=0B1HTR0ONiUmEN3JvZXVYNGpFVDA&export=download" class="w3-round" style="width:100%">
+        <div class="w3-left-align">lowest minimum = 1.246 (1993), 1.494 (2017)</div>
+        <div class="w3-left-align">lowests maximums = 14.162 (1986), 14.195 (2017)</div>
+        <div class="w3-left-align">highest minimum = 2.438 (2015)</div>
+        <div class="w3-left-align">highest maximum = 16.324 (2014)</div>
       </div>
       <div class="w3-third">
         <img src="https://drive.google.com/uc?id=0B1HTR0ONiUmEX25RR2xKSlpMUnc&export=download" class="w3-round" style="width:100%">
@@ -85,11 +91,10 @@ body {font-family: "Lato", sans-serif}
     </div>
   </div>
   
-```````````````````````````````````````````````````````````````````````````````````````````````````
+
     <!-- Northern Hemisphere Snow Cover -->
-  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="band">
-    <h2 class="w3-wide">Northern Hemisphere Snow Cover</h3>
-    <p class="w3-justify">interesting info.</p>
+  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="Snow">
+    <h2 class="w3-wide">Northern Hemisphere Snow Cover</h2>
     <div class="w3-row w3-padding-32">
       <div class="w3-third">
         <img src="https://drive.google.com/uc?id=138IvT0VSzxR8IWvTNHhr0tJ_s_lONgRz&export=download" class="w3-round" style="width:100%">
@@ -105,9 +110,10 @@ body {font-family: "Lato", sans-serif}
   
   
       <!-- Freezing Degree Days -->
-  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="band">
-    <h2 class="w3-wide">Freezing Degree Days</h3>
-    <p class="w3-justify">interesting info.</p>
+  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="FDD">
+    <h2 class="w3-wide">Freezing Degree Days</h2>
+    <div class="w3-left-align">The graphs show the Freezing Degree days over the whole freezing season. The sea ice thickness can be estimated based on the following formula (Lebedev 1938)</div>
+    <div class="w3-left-align">Thickness (cm) = 1.33 * FDD (°C)^0.58</div>
     <div class="w3-row w3-padding-32">
       <div class="w3-third">
         <img src="https://drive.google.com/uc?id=0B1HTR0ONiUmEaU1oX21WcFBxc00&export=download" class="w3-round" style="width:100%">
@@ -161,10 +167,8 @@ body {font-family: "Lato", sans-serif}
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-  <i class="fa fa-facebook-official w3-hover-opacity"></i>
   <i class="fa fa-instagram w3-hover-opacity"></i>
   <i class="fa fa-snapchat w3-hover-opacity"></i>
-  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
   <i class="fa fa-twitter w3-hover-opacity"></i>
   <i class="fa fa-linkedin w3-hover-opacity"></i>
   <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>

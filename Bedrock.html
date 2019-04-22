@@ -30,12 +30,8 @@ body {font-family: "Lato", sans-serif}
 
 hr { 
   display: block;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  margin-left: auto;
-  margin-right: auto;
-  border-style: inset;
-  border-width: 1px;
+  border-width: 2px;
+  border-color: #666666;
 } 
 
 .img-comp-container {
@@ -173,7 +169,8 @@ function initComparisons() {
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="IceSheets.html" class="w3-padding-large w3-button">Ice Sheets<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="Bedrock.html" class="w3-bar-item w3-button">Bedrock</a>
+        <a href="Bedrock.html" class="w3-bar-item w3-button">Greenland Bedrock</a>
+        <a href="Bedrock-Antarctica.html" class="w3-bar-item w3-button">Antarctica Bedrock</a>
         <a href="Glacier-size.html" class="w3-bar-item w3-button">Glacier Size</a>
         </div>
         </div>
@@ -210,20 +207,18 @@ function initComparisons() {
 </div>
 </div>
 <a href="doc.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Documentation</a>
-
 </div>
 
 
-<div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1920px" id="SIT">
+<div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1920px">
     <h1 class="w3-wide">Greenland Bedrock</h1>
     <p class="w3-opacity"><i>Colour image: 2015-07-15</i></p>
     Opacity(%): <input type="number" id="myText" value="33" min="0" max="100">
     <button onclick="setOpacity()">Set</button>
-    
-    <div class="w3-row w3-padding-12">
     <center>
       <img src="Glacier/All_Greenland_Legend.png">
       </center>
+    <div class="w3-row w3-padding-12">
     <div class="img-comp-container_long">
        <div class="img-comp-img">
         <img src="Glacier/Greenland_2015_07_15.png" width="1630" height="2750">
@@ -252,8 +247,6 @@ function initComparisons() {
       <hr>
   </div>
   
-  
-      <div class="w3-row">
   
       <!-- Petermann -->
       <h3 class="w3-wide">Petermann Glacier</h3>
@@ -295,10 +288,6 @@ function initComparisons() {
       <hr>
   
 
-
-        <!-- Pine Island -->
-        <!-- Thawties -->
-        <!-- triangle -->
         
 <h2 class="w3-wide">Data used</h2>
 <p> Morlighem, M. et al. 2017, updated 2018. IceBridge BedMachine Greenland, Version 3. Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center. doi: https://doi.org/10.5067/2CIX82HUV88Y.</p>

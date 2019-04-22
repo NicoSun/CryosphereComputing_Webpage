@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Glacier Bedrock</title>
+<title>Antarctica Bedrock</title>
 <head>
 
 <link REL="SHORTCUT ICON" href="CC.ico" type="image/x-icon"> 
@@ -28,9 +28,25 @@ body {font-family: "Lato", sans-serif}
 
 * {box-sizing: border-box;}
 
+hr { 
+  display: block;
+  border-width: 2px;
+  border-color: #666666;
+} 
+
 .img-comp-container {
   position: relative;
   height: 1150px; /*should be the same height as the images*/
+}
+
+.img-comp-container_long {
+  position: relative;
+  height: 1482px; /*should be the same height as the images*/
+}
+
+.img-comp-container_short {
+  position: relative;
+  height: 777px; /*should be the same height as the images*/
 }
 
 .img-comp-img {
@@ -158,7 +174,8 @@ function initComparisons() {
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="IceSheets.html" class="w3-padding-large w3-button">Ice Sheets<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="Bedrock.html" class="w3-bar-item w3-button">Bedrock</a>
+        <a href="Bedrock.html" class="w3-bar-item w3-button">Greenland Bedrock</a>
+        <a href="Bedrock-Antarctica.html" class="w3-bar-item w3-button">Antarctica Bedrock</a>
         <a href="Glacier-size.html" class="w3-bar-item w3-button">Glacier Size</a>
         </div>
         </div>
@@ -195,78 +212,76 @@ function initComparisons() {
 </div>
 </div>
 <a href="doc.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Documentation</a>
-
 </div>
 
 
-<div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1920px" id="SIT">
-    <h1 class="w3-wide">Bedrock Antarctica</h1>
+<div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1920px">
+    <h1 class="w3-wide">Antarctica Bedrock</h1>
+    <p class="w3-opacity"><i>Colour image: 2019-01-25</i></p>
     Opacity(%): <input type="number" id="myText" value="33" min="0" max="100">
     <button onclick="setOpacity()">Set</button>
-    <h3 class="w3-wide">Jakobshavn Glacier</h3>
-    <p class="w3-opacity"><i>Colour image: 2015-08-16 (record low)</i></p>
-    <div class="w3-row w3-padding-12">
-      <center>
+    <center>
       <img src="Glacier/Bedmap2_legend_discrete.png">
       </center>
-        <!-- Jacobshavn -->
-      <div class="img-comp-container">
+    <div class="w3-row w3-padding-12">
+    <div class="img-comp-container_long">
        <div class="img-comp-img">
-        <img src="Glacier/Jakobshavn_Record_RGB.png" width="1900" height="1150">
+        <img src="Glacier/Antarctica.png" width="1920" height="1482">
       </div>
       <div class="img-comp-img img-comp-overlay">
-        <img id="aaa" src="Glacier/Jakobshavn_Record+Bedrock.png" width="1900" height="1150">
+        <img id="ddd" src="Glacier/Antarctica_bed.png" width="1920" height="1482">
       </div>
       </div>
+      <hr>
+    
+    <!-- Pine Island Glacier -->
+    <h3 class="w3-wide">Pine Island Glacier</h3>
+    <p class="w3-opacity"><i>Colour image: 2019-02-02</i></p>
+    <div class="w3-row w3-padding-12">
+      <div class="img-comp-container">
+       <div class="img-comp-img">
+        <img src="Glacier/PIG.png" width="988" height="1150">
+      </div>
+      <div class="img-comp-img img-comp-overlay">
+        <img id="aaa" src="Glacier/PIG_bed.png" width="988" height="1150">
+      </div>
+      </div>
+      <hr>
   </div>
   
-      <div class="w3-row">
   
-      <!-- Petermann -->
-      <h3 class="w3-wide">Petermann Glacier</h3>
-      <p class="w3-opacity"><i>Colour image: 2018-08-20</i></p>
-      <div class="img-comp-container">
+      <!-- Thwaites -->
+        <h3 class="w3-wide">Thwaites Glacier</h3>
+        <p class="w3-opacity"><i>Colour image: 2019-02-02</i></p>
+
+      <div class="img-comp-container_short">
        <div class="img-comp-img">
-        <img src="Glacier/Petermann_S2A.png" width="1150" height="1153">
+        <img src="Glacier/Thawties.png" width="1118" height="777">
       </div>
       <div class="img-comp-img img-comp-overlay">
-        <img id="bbb" src="Glacier/Petermann+Bedrock.png" width="1150" height="1153">
+        <img id="bbb" src="Glacier/Thawties_bed.png" width="1118" height="777">
       </div>
       </div>
+      <hr>
       
-      <!-- 79N -->
-        <h3 class="w3-wide">Nioghalvfjerdsfjorden / Zachariae Isstrom  Glacier</h3>
-        <p class="w3-opacity"><i>Colour image: 2016-08-16</i></p>
+      <!-- Crossen & Dotson Ice shelf -->
+        <h3 class="w3-wide">Crossen & Dotson Ice shelf</h3>
+        <p class="w3-opacity"><i>Colour image: 2019-02-02</i></p>
 
-      <div class="img-comp-container">
+      <div class="img-comp-container_short">
        <div class="img-comp-img">
-        <img src="Glacier/Zach_S2A.png" width="1900" height="1150">
+        <img src="Glacier/Crossen.png" width="1274" height="777">
       </div>
       <div class="img-comp-img img-comp-overlay">
-        <img id="ccc" src="Glacier/Zach_S2A+Bedrock.png" width="1900" height="1150">
+        <img id="ccc" src="Glacier/Crossen_bed.png" width="1274" height="777">
       </div>
       </div>
-        <!-- Helheim -->
-        <h3 class="w3-wide">Helheim Glacier</h3>
-              <p class="w3-opacity"><i>Colour image: 2018-08-04</i></p>
-      <div class="img-comp-container">
-       <div class="img-comp-img">
-        <img src="Glacier/Helheim_S2A.png" width="1835" height="1145">
-      </div>
-      <div class="img-comp-img img-comp-overlay">
-        <img id="ddd" src="Glacier/Helheim_S2A+Bedrock.png" width="1835" height="1145">
-      </div>
-      </div>
-        
+      <hr>
 
-
-        <!-- Pine Island -->
-        <!-- Thawties -->
-        <!-- triangle -->
         
 <h2 class="w3-wide">Data used</h2>
 <p> P. Fretwell, et al. 2013. Bedmap2: improved ice bed, surface and thickness datasets for Antarctica. doi:10.5194/tc-7-375-2013</p> 
-<p>Copernicus Sentinel data 2015-2018, processed by ESA.</p>
+<p>Terra / MODIS from NASA Worldview.</p>
   
 <!-- End Page Content -->
 </div>

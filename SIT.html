@@ -152,11 +152,11 @@ img {vertical-align: middle;}
   </div>
   <hr>
   
-<div class="w3-row w3-padding-12 w3-center">
+<div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px">
 <h2 class="w3-wide">past months</h2>
 <p class="w3-opacity"><i>beginning in August 2012</i></p>
 
-<img id="past" src="ADS_Images/AMSR2_SIT_20120901.png" class="w3-round" style="display = block">
+<img id="past" src="ADS_Images/AMSR2_SIT_20120901.png" class="w3-round">
 
 <div class="slidecontainer">
     <span>Year:</span>
@@ -231,10 +231,8 @@ function showimage (imageid){
 
 if((slider.value == 2012 && slider2.value < 8) || (slider.value == 2019 && slider2.value > 4)){
 	imageid = "ADS_Images/NoData.png"
-	document.getElementById("past").src = imageid;
-} else {
-  document.getElementById("past").src = imageid;
-}
+} 
+document.getElementById("past").src = imageid;
 
 }
 

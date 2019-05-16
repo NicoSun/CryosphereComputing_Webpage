@@ -156,7 +156,7 @@ img {vertical-align: middle;}
 <h2 class="w3-wide">past months</h2>
 <p class="w3-opacity"><i>beginning in August 2012</i></p>
 
-<img src="ADS_Images/AMSR2_SIT_20120901.png" class="w3-round">
+<img id="past" src="ADS_Images/AMSR2_SIT_20120901.png" class="w3-round" style="display = block">
 
 <div class="slidecontainer">
     <span>Year:</span>
@@ -215,7 +215,7 @@ output.innerHTML = this.value;
 
 	//update image
 	var imageid = "ADS_Images/AMSR2_SIT_" + slider.value + slider2.value.padStart(2, '0') + "01.png";
-	//showimage(imageid);
+	showimage(imageid);
 } 
 
 // Update for month slider
@@ -224,7 +224,7 @@ output2.innerHTML = this.value;
 
 	//update image
 	var imageid = "ADS_Images/AMSR2_SIT_" + slider.value + slider2.value.padStart(2, '0') + "01.png";
-	//showimage(imageid);
+	showimage(imageid);
 } 
 
 function showimage (imageid){

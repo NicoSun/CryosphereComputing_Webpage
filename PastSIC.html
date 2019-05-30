@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Historic Sea Ice Concentration</title>
+<head>
+
+<link REL="SHORTCUT ICON" href="CC.ico" type="image/x-icon"> 
+<link rel="icon" href="CC.ico" type="image/x-icon">
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-84651184-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-84651184-2');
+</script>
+
+<style>
+body {font-family: "Lato", sans-serif}
+
+hr { 
+  display: block;
+  border-width: 2px;
+  border-color: #666666;
+} 
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+* {box-sizing: border-box}
+img {vertical-align: middle;}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<!-- div class="w3-top"-->
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">HOME</a>
+    <a href="SIT.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">AMSR2 Snow & Ice Volume</a>
+        <div class="w3-dropdown-hover w3-hide-small">
+      <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="NRTawp.html" class="w3-bar-item w3-button">NRT AWP</a>
+        </div>
+        </div>
+        
+      <div class="w3-dropdown-hover w3-hide-small">
+      <a href="IceSheets.html" class="w3-padding-large w3-button">Ice Sheets<i class="fa fa-caret-down"></i></a>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="Bedrock.html" class="w3-bar-item w3-button">Greenland Bedrock</a>
+        <a href="Bedrock-Antarctica.html" class="w3-bar-item w3-button">Antarctica Bedrock</a>
+        <a href="Glacier-size.html" class="w3-bar-item w3-button">Glacier Size</a>
+        </div>
+        </div>
+        
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="Snow-Cover.html" class="w3-bar-item w3-button">Snow Covered Days</a>
+        <a href="IceFreeDays.html" class="w3-bar-item w3-button">Ice Free Days</a>
+    </div>
+    </div>
+     <a href="doc.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Documentation</a>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
+<!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">HOME</a>
+  <a href="SIT.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">AMSR2 Snow & Ice Volume</a>
+  
+    <div class="w3-dropdown-hover">
+  <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
+    <div class="w3-dropdown-content w3-bar-block w3-card-4">
+    <a href="NRTawp.html" class="w3-bar-item w3-button">NRT AWP</a>
+        </div>
+        </div>
+  
+  <div class="w3-dropdown-hover">
+  <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="Snow-Cover.html" class="w3-bar-item w3-button">Snow Covered Days</a>
+        <a href="IceFreeDays.html" class="w3-bar-item w3-button">Ice Free Days</a>
+</div>
+</div>
+<a href="doc.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Documentation</a>
+</div>
+
+
+    <!-- Arctic -->
+  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="SIC">
+    <h2 class="w3-wide">NSIDC Sea Ice Concentration</h2>
+	<p class="w3-opacity"><i>beginning in January 1979</i></p>
+		<img id="past_Arctic" src="Historic_Sea_Ice/NSIDC_20120901_north.png">
+		<div class="w3-row">
+		
+	<select id="North_South">
+	  <option value="Arctic">Arctic</option>
+	  <option value="Antarctic">Antarctic</option>
+	</select>
+
+<div class="slidecontainer">
+    <span>Year:</span>
+    <span id="Yearselect" style="font-weight:bold;color:red">2012</span>
+  <input type="range" min="1979" max="2019" value="2012" class="slider" id="myRange" style="width:50%">
+</div>
+
+<div class="slidecontainer">
+    <span>Month:</span>
+    <span id="Monthselect" style="font-weight:bold;color:blue">9</span>
+  <input type="range" min="1" max="12" value="9" class="slider" id="myRange2" style="width:50%">
+</div>
+</div>
+
+  <hr>
+  
+<div class="w3-center">
+<h2 class="w3-wide">Data used</h2>
+<p>Cavalieri, D. J., C. L. Parkinson, P. Gloersen, and H. J. Zwally. 1996, updated yearly. Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data, Version 1.1 Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center. doi: https://doi.org/10.5067/8GQ8LZQVL0VL.</p>
+</div>
+<!-- End Page Content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+var fileending = "north"
+
+// Dispalys Slider value
+var slider = document.getElementById("myRange");
+var output = document.getElementById("Yearselect");
+output.innerHTML = slider.value; // Display the default slider value
+
+var slider2 = document.getElementById("myRange2");
+var output2 = document.getElementById("Monthselect");
+output2.innerHTML = slider2.value; // Display the default slider value
+
+// Update for year slider
+slider.oninput = function() {
+output.innerHTML = this.value;
+
+	//update image
+	var imageid = "Historic_Sea_Ice/NSIDC_" + slider.value + slider2.value.padStart(2, '0') + "01_" + fileending + ".png";
+	showimage(imageid);
+} 
+
+// Update for month slider
+slider2.oninput = function() {
+output2.innerHTML = this.value;
+
+	//update image
+	var imageid = "Historic_Sea_Ice/NSIDC_" + slider.value + slider2.value.padStart(2, '0') + "01_" + fileending + ".png";
+	showimage(imageid);
+} 
+
+var Hemisphere = document.getElementById("North_South");
+Hemisphere.onchange = function() {
+  if (this.value=="Arctic"){
+	fileending = "north"
+  }
+  else{
+	  fileending = "south"
+  }
+  //update image
+	var imageid = "Historic_Sea_Ice/NSIDC_" + slider.value + slider2.value.padStart(2, '0') + "01_" + fileending + ".png";
+	showimage(imageid);
+}
+
+function showimage (imageid){
+
+if(slider.value == 2019 && slider2.value > 5){
+	imageid = "ADS_Images/NoData.png"
+} 
+document.getElementById("past_Arctic").src = imageid;
+}
+
+//------------------------------------------
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+</script>
+
+</body>
+</html>

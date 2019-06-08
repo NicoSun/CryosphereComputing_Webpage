@@ -98,6 +98,7 @@ img {vertical-align: middle;}
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="Snow-Cover.html" class="w3-bar-item w3-button">Snow Covered Days</a>
         <a href="IceFreeDays.html" class="w3-bar-item w3-button">Ice Free Days</a>
+        <a href="PastSIC.html" class="w3-bar-item w3-button">Past Ice Maps</a>
     </div>
     </div>
      <a href="doc.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Documentation</a>
@@ -122,6 +123,7 @@ img {vertical-align: middle;}
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="Snow-Cover.html" class="w3-bar-item w3-button">Snow Covered Days</a>
         <a href="IceFreeDays.html" class="w3-bar-item w3-button">Ice Free Days</a>
+        <a href="PastSIC.html" class="w3-bar-item w3-button">Past Ice Maps</a>
 </div>
 </div>
 <a href="doc.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Documentation</a>
@@ -132,7 +134,9 @@ img {vertical-align: middle;}
   <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="SIC">
     <h2 class="w3-wide">NSIDC Sea Ice Concentration</h2>
 	<p class="w3-opacity"><i>beginning in January 1979</i></p>
-		<img id="past_Arctic" src="Historic_Sea_Ice/NSIDC_20120901_north.png">
+	<a href="https://github.com/NicoSun/ScienceData" class="w3-bar-item w3-button w3-padding-large">Data download</a>
+	<div class="w3-row">
+		<img id="past_Arctic" src="Historic_Sea_Ice/NSIDC_20120915_north.png">
 		<div class="w3-row">
 		
 	<select id="North_South">
@@ -149,7 +153,7 @@ img {vertical-align: middle;}
 <div class="slidecontainer">
     <span>Month:</span>
     <span id="Monthselect" style="font-weight:bold;color:blue">9</span>
-  <input type="range" min="1" max="12" value="9" class="slider" id="myRange2" style="width:50%">
+  <input type="range" min="1" max="12.5" step="0.5" value="9" class="slider" id="myRange2" style="width:50%">
 </div>
 </div>
 
@@ -162,13 +166,10 @@ img {vertical-align: middle;}
 <!-- End Page Content -->
 </div>
 
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
-  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
-
 <script>
 var fileending = "north"
+var daystring = "01"
+var monthstring = "09"
 
 // Dispalys Slider value
 var slider = document.getElementById("myRange");
@@ -184,16 +185,19 @@ slider.oninput = function() {
 output.innerHTML = this.value;
 
 	//update image
-	var imageid = "Historic_Sea_Ice/NSIDC_" + slider.value + slider2.value.padStart(2, '0') + "01_" + fileending + ".png";
+	var imageid = "Historic_Sea_Ice/NSIDC_" + slider.value + monthstring + daystring + "_" + fileending + ".png";
 	showimage(imageid);
 } 
 
 // Update for month slider
 slider2.oninput = function() {
 output2.innerHTML = this.value;
+daystring = checkInteger(parseFloat(this.value));
+monthstring = String(parseInt(this.value));
+monthstring = monthstring.padStart(2, '0');
 
 	//update image
-	var imageid = "Historic_Sea_Ice/NSIDC_" + slider.value + slider2.value.padStart(2, '0') + "01_" + fileending + ".png";
+	var imageid = "Historic_Sea_Ice/NSIDC_" + slider.value + monthstring + daystring + "_" + fileending + ".png";
 	showimage(imageid);
 } 
 
@@ -206,7 +210,7 @@ Hemisphere.onchange = function() {
 	  fileending = "south"
   }
   //update image
-	var imageid = "Historic_Sea_Ice/NSIDC_" + slider.value + slider2.value.padStart(2, '0') + "01_" + fileending + ".png";
+	var imageid = "Historic_Sea_Ice/NSIDC_" + slider.value + monthstring + daystring + "_" + fileending + ".png";
 	showimage(imageid);
 }
 
@@ -216,7 +220,17 @@ if(slider.value == 2019 && slider2.value > 5){
 	imageid = "ADS_Images/NoData.png"
 } 
 document.getElementById("past_Arctic").src = imageid;
+//document.write(imageid);
 }
+
+function checkInteger (num){
+if(Number.isInteger(num)){
+	return "01";
+	} 
+else{return "15";}
+}
+
+
 
 //------------------------------------------
 

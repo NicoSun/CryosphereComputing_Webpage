@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Ice Free Days</title>
+<title>AWP Regional</title>
 <head>
 
 <link REL="SHORTCUT ICON" href="CC.ico" type="image/x-icon"> 
@@ -11,74 +11,12 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-84651184-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-84651184-2');
-</script>
-
 <style>
 body {font-family: "Lato", sans-serif}
-.mySlides {display: none}
-
-hr { 
-  display: block;
-  border-width: 2px;
-  border-color: #666666;
-} 
-
-.slider {
-  -webkit-appearance: none;
-  width: 100%;
-  height: 25px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
-  -webkit-transition: .2s;
-  transition: opacity .2s;
-}
-
-.slider:hover {
-  opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  background: #4CAF50;
-  cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #4CAF50;
-  cursor: pointer;
-}
-
-
-* {box-sizing: border-box}
-img {vertical-align: middle;}
-
-
-img.ex {
-  padding: 35px;
-}
-
-p.ex {
-  padding: 40px;
-}
-
-
 </style>
+
 </head>
+
 <body>
 
 <!-- Navbar -->
@@ -147,76 +85,62 @@ p.ex {
 <a href="doc.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Documentation</a>
 </div>
 
-    <!-- Snow Covered Days -->
-  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1600px" id="SIT">
-    <h1 class="w3-wide">Arctic and Antarctic Ice Free Days</h1>
-    <p class="w3-opacity"><i>Total number of days a gridcell is icefree.</i></p>
+    <!-- Sea Ice Area -->
+  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="SIA">
+    <h2 class="w3-wide">Lower Arctic</h2>
+    <p class="ex">AWP jumps are due to the elimination of coastline measurement errors</p>
     <div class="w3-row w3-padding-12">
-    </div>
+      <div class="w3-half">
 
-    
-    <!-- Icefree Arctic normal -->
-<div class="w3-half">
-<img id="normal" src="IceFreeDays/Arctic_IceFreeDays_2000.png" style="width:100%">
-</div>
-    <!-- Icefree Arctic anomaly -->
-<div class="w3-half">
-<img id="anomaly" src="IceFreeDays/Arctic_IceFreeDays__anom_2000.png" style="width:100%">
-</div>
+        <img src="AWP_regional/AWP_Daily_Sea of Okhotsk.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Daily_Bering Sea.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Daily_Hudson Bay.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Daily_Baffin Bay.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Daily_East Greenland Sea.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Daily_Barents Sea.png" class="w3-round" style="width:100%">
 
-    
-<div class="slidecontainer">
-    <span>Year:</span>
-    <span id="Arctic_Yearselect" style="font-weight:bold;color:red">2000</span>
-  <input type="range" min="1979" max="2017" value="2000" class="slider" id="myRange_Arctic" style="width:66%">
-</div>
+      </div>
+            <div class="w3-half">
+        <img src="AWP_regional/AWP_Accu_Sea of Okhotsk.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Accu_Bering Sea.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Accu_Hudson Bay.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Accu_Baffin Bay.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Accu_East Greenland Sea.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Accu_Barents Sea.png" class="w3-round" style="width:100%">
 
-   </div>
-<div class="w3-half">
-  <img src="IceFreeDays/Arctic_IceFreeDays_Mean.png" class="w3-round" style="width:100%">
-</div>
+      </div>
 
+<div class="w3-row"></div>
 
-<div class="w3-half">
-  <p class="ex">Select individual years with the slider to view the difference with the long term mean.
-   Ice Free is defined as having an ice concentration below 15%.  The baseline for anomaly calculation is 1979-2018</p>
-   <img src="IceFreeDays/Icefreedays_Mean.png" class="w3-round" style="width:100%">
-    </div>
-</div>
+<h2 class="w3-wide">High Arctic</h2>
+    <div class="w3-row w3-padding-12">
+      <div class="w3-half">
 
-<div class="w3-row">
+        <img src="AWP_regional/AWP_Daily_Kara Sea.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Daily_Laptev Sea.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Daily_East Siberian Sea.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Daily_Chukchi Sea.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Daily_Beaufort Sea.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Daily_Canadian Archipelago.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Daily_Central Arctic.png" class="w3-round" style="width:100%">
+      </div>
+            <div class="w3-half">
+        <img src="AWP_regional/AWP_Daily_Kara Sea.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Daily_Laptev Sea.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Daily_East Siberian Sea.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Daily_Chukchi Sea.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Daily_Beaufort Sea.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Daily_Canadian Archipelago.png" class="w3-round" style="width:100%">
+        <img src="AWP_regional/AWP_Daily_Central Arctic.png" class="w3-round" style="width:100%">
+      </div>
 
-</div>
-
-    <!-- Icefree Antarctic normal -->
-<div class="w3-half">
-<img id="normal_south" src="IceFreeDays/Icefreedays_2000.png" style="width:100%">
-</div>
-    <!-- Icefree Antarctic anomaly -->
-<div class="w3-half">
-<img id="anomaly_south" src="IceFreeDays/Icefreedays_anom_2000.png" style="width:100%">
-</div>
-
-</div>
-</div>
-
-
-<center>
-<div class="slidecontainer" >
-    <span>Year:</span>
-    <span id="Yearselect_south" style="font-weight:bold;color:red">2000</span>
-  <input type="range" min="1979" max="2017" value="2000" class="slider" id="myRange_south" style="width:66%">
-</div>
-</center>
-
-<div class="w3-center">
-<hr>
-<h2 class="w3-wide">Data used</h2>
-<p>Cavalieri, D. J., C. L. Parkinson, P. Gloersen, and H. J. Zwally. 1996, updated yearly. Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data, Version 1.1 Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center. doi: https://doi.org/10.5067/8GQ8LZQVL0VL.</p>
-</div>
-   
+  
+  
 <!-- End Page Content -->
 </div>
+</div>
+</div>
+
 
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
@@ -224,50 +148,6 @@ p.ex {
 </footer>
 
 <script>
-// Dispalys Slider value
-var slider_A = document.getElementById("myRange_Arctic");
-var output_A = document.getElementById("Arctic_Yearselect");
-output_A.innerHTML = slider_A.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-slider_A.oninput = function() {
-  output_A.innerHTML = this.value;
-  
-  //update image
-	var imageid = "IceFreeDays/Arctic_IceFreeDays_" + slider_A.value + ".png";
-	var imageid_anom = "IceFreeDays/Arctic_IceFreeDays__anom_" + slider_A.value + ".png";
-	showimage(imageid,imageid_anom);
-} 
-
-function showimage (imageid,imageid_anom){
-document.getElementById("normal").src = imageid;
-document.getElementById("anomaly").src = imageid_anom;
-}
-
-// ------------------------------------------
-
-var slider = document.getElementById("myRange_south");
-var output = document.getElementById("Yearselect_south");
-output.innerHTML = slider.value; // Display the default slider value
-
-// Update the current slider value (each time you drag the slider handle)
-slider.oninput = function() {
-  output.innerHTML = this.value;
-  
-  //update image
-	var imageid = "IceFreeDays/Icefreedays_" + slider.value + ".png";
-	var imageid_anom = "IceFreeDays/Icefreedays_anom_" + slider.value + ".png";
-	showimage_south(imageid,imageid_anom);
-} 
-
-function showimage_south (imageid,imageid_anom){
-document.getElementById("normal_south").src = imageid;
-document.getElementById("anomaly_south").src = imageid_anom;
-}
-
-
-// ------------------------------------------
-
 // Used to toggle the menu on small screens when clicking on the menu button
 function myFunction() {
   var x = document.getElementById("navDemo");

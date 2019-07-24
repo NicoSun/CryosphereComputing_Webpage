@@ -166,8 +166,16 @@ Both grid cells below fulfill the 15% threshold and are counted as completely ic
         <p> The Albedo-Warming Potential (AWP) quantifies the additional ocean warming from a lower ice cover at the poles.
          These calculations don't include cloud cover, therefore it is called "Warming Potential" and not actual warming.
           However, over the six-month period weather tends to average out and warm areas correlate well with low ice extent in September.
-           The basis of all calculations is a global surface radiation model and NSIDC Sea Ice Concentration data. The calculated values 
-           are arithmetic averages over the whole maximum possible ice extent (shown in light blue)</p>
+           The basis of all calculations is a global surface radiation model and NSIDC Sea Ice Concentration data.</p>
+           <p><u>Formula per gridcell</u><br>
+           AWP Daily = ((1-SIC) * MJ) + 0.15 * MJ * SIC<br>
+           AWP Accumulated = sum(AWPdaily)<br>
+           MJ = incoming surface radiation per square meter<br>
+           SIC = Sea Ice Concentration</p>
+           <p>
+            The calculated values are arithmetic averages over the whole maximum possible ice extent (shown in light blue). All lakes and some marginal seas 
+            (Baltic Sea, Gulf of St. Lawrence) are not considered because their coastline to total area ratio is too high. Coastline measurement errors 
+             introduce just random noise.</p>
        <img src="Documentation/Arctic_max_ice_extent.png" class="w3-round" >
       </div>
       <div class="w3-half">

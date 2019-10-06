@@ -13,7 +13,6 @@
 <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
 <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
 
-<script id="aaa" type="text/javascript" src="icebergs.json"></script>
 
 <!-- Chart code -->
 <script>
@@ -69,9 +68,8 @@ circle.tooltipText = "{Iceberg}";
 imageSeriesTemplate.propertyFields.latitude = "Latitude";
 imageSeriesTemplate.propertyFields.longitude = "Longitude";
 
-
-imageSeries.dataSource.url = "Iceberg/icebergs.json";
-imageSeries.dataSource.parser = new am4core.JSONParser();
+imageSeries.dataSource.url = "https://CryosphereComputing.tk/Iceberg/icebergs.json";
+imageSeries.dataSource.parser = new am4core.JParser();
 imageSeries.dataSource.parser.options.emptyAs = 0;
 
 }); // end am4core.ready()

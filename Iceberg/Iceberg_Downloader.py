@@ -41,5 +41,5 @@ def makejsonfile():
 		json.dump(rows, json_file_ind, sort_keys=False, indent=4, separators=(',', ': '))
 
 
-#download()
+download()
 makejsonfile()

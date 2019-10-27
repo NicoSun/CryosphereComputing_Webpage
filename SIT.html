@@ -208,6 +208,9 @@ var slider2 = document.getElementById("myRange2");
 var output2 = document.getElementById("Monthselect");
 output2.innerHTML = slider2.value; // Display the default slider value
 
+var d = new Date();
+var currentmonth = d.getMonth();
+
 // Update for year slider
 slider.oninput = function() {
 output.innerHTML = this.value;
@@ -228,7 +231,7 @@ output2.innerHTML = this.value;
 
 function showimage (imageid){
 
-if((slider.value == 2012 && slider2.value < 8) || (slider.value == 2019 && slider2.value > 8)){
+if((slider.value == 2012 && slider2.value < 8) || (slider.value == 2019 && slider2.value > currentmonth)){
 	imageid = "ADS_Images/NoData.png"
 } 
 document.getElementById("past").src = imageid;

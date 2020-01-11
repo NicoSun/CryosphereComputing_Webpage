@@ -19,14 +19,14 @@
     },
     {
         "Iceberg": "A68A;  L:151.9km W:48.2km",
-        "Latitude": -64.01,
-        "Longitude": -54.07,
+        "Latitude": -63.96,
+        "Longitude": -53.46,
         "": ""
     },
     {
         "Iceberg": "A68B;  L:13.0km W:5.6km",
         "Latitude": -64.62,
-        "Longitude": -58.47,
+        "Longitude": -58.21,
         "": ""
     },
     {
@@ -43,14 +43,14 @@
     },
     {
         "Iceberg": "B09I;  L:22.2km W:11.1km",
-        "Latitude": -67.97,
-        "Longitude": 39.95,
+        "Latitude": -68.34,
+        "Longitude": 38.81,
         "": ""
     },
     {
         "Iceberg": "B15AA;  L:20.4km W:11.1km",
-        "Latitude": -57.26,
-        "Longitude": -30.21,
+        "Latitude": -56.76,
+        "Longitude": -31.09,
         "": ""
     },
     {
@@ -61,8 +61,8 @@
     },
     {
         "Iceberg": "B16;  L:29.6km W:11.1km",
-        "Latitude": -55.32,
-        "Longitude": -25.57,
+        "Latitude": -56.15,
+        "Longitude": -25.12,
         "": ""
     },
     {
@@ -80,13 +80,13 @@
     {
         "Iceberg": "B29;  L:20.4km W:9.3km",
         "Latitude": -74.53,
-        "Longitude": -108.92,
+        "Longitude": -108.91,
         "": ""
     },
     {
         "Iceberg": "B37;  L:14.8km W:5.6km",
-        "Latitude": -72.72,
-        "Longitude": -111.02,
+        "Latitude": -72.73,
+        "Longitude": -111.03,
         "": ""
     },
     {
@@ -97,14 +97,14 @@
     },
     {
         "Iceberg": "B39;  L:14.8km W:7.4km",
-        "Latitude": -66.75,
-        "Longitude": 80.76,
+        "Latitude": -66.81,
+        "Longitude": 80.46,
         "": ""
     },
     {
         "Iceberg": "B40;  L:14.8km W:9.3km",
         "Latitude": -65.59,
-        "Longitude": 132.2,
+        "Longitude": 132.22,
         "": ""
     },
     {
@@ -115,8 +115,8 @@
     },
     {
         "Iceberg": "B43;  L:18.5km W:9.3km",
-        "Latitude": -71.76,
-        "Longitude": -173.12,
+        "Latitude": -71.73,
+        "Longitude": -173.02,
         "": ""
     },
     {
@@ -127,14 +127,14 @@
     },
     {
         "Iceberg": "B46;  L:18.5km W:7.4km",
-        "Latitude": -74.45,
+        "Latitude": -74.44,
         "Longitude": -105.57,
         "": ""
     },
     {
         "Iceberg": "B47;  L:35.2km W:9.3km",
-        "Latitude": -73.74,
-        "Longitude": -133.21,
+        "Latitude": -73.75,
+        "Longitude": -133.64,
         "": ""
     },
     {
@@ -158,7 +158,7 @@
     {
         "Iceberg": "C24;  L:20.4km W:5.6km",
         "Latitude": -64.84,
-        "Longitude": 96.03,
+        "Longitude": 96.02,
         "": ""
     },
     {
@@ -187,8 +187,8 @@
     },
     {
         "Iceberg": "C34;  L:20.4km W:9.3km",
-        "Latitude": -65.14,
-        "Longitude": 115.65,
+        "Latitude": -65.28,
+        "Longitude": 114.47,
         "": ""
     },
     {
@@ -205,14 +205,14 @@
     },
     {
         "Iceberg": "D15A;  L:94.5km W:44.4km",
-        "Latitude": -66.64,
-        "Longitude": 81.91,
+        "Latitude": -66.65,
+        "Longitude": 81.92,
         "": ""
     },
     {
         "Iceberg": "D15B;  L:61.1km W:22.2km",
         "Latitude": -66.99,
-        "Longitude": 81.57,
+        "Longitude": 81.58,
         "": ""
     },
     {
@@ -223,8 +223,8 @@
     },
     {
         "Iceberg": "D21B;  L:20.4km W:7.4km",
-        "Latitude": -76.06,
-        "Longitude": -39.0,
+        "Latitude": -75.74,
+        "Longitude": -38.44,
         "": ""
     },
     {
@@ -235,8 +235,8 @@
     },
     {
         "Iceberg": "D26;  L:35.2km W:3.7km",
-        "Latitude": -69.4,
-        "Longitude": 29.33,
+        "Latitude": -69.36,
+        "Longitude": 29.4,
         "": ""
     },
     {
@@ -247,8 +247,8 @@
     },
     {
         "Iceberg": "D28;  L:53.7km W:35.2km",
-        "Latitude": -68.06,
-        "Longitude": 71.06,
+        "Latitude": -68.0,
+        "Longitude": 71.07,
         "": ""
     }
 ]

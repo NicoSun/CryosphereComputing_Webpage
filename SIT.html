@@ -173,7 +173,7 @@ img {vertical-align: middle;}
 <div class="slidecontainer">
     <span>Year:</span>
     <span id="Yearselect" style="font-weight:bold;color:red">2012</span>
-  <input type="range" min="2012" max="2019" value="2012" class="slider" id="myRange" style="width:50%">
+  <input type="range" min="2012" max="2020" value="2012" class="slider" id="myRange" style="width:50%">
 </div>
 
 <div class="slidecontainer">
@@ -209,7 +209,7 @@ var output2 = document.getElementById("Monthselect");
 output2.innerHTML = slider2.value; // Display the default slider value
 
 var d = new Date();
-var currentyear = d.getYear();
+var currentyear = d.getFullYear();
 var currentmonth = d.getMonth();
 
 // Update for year slider

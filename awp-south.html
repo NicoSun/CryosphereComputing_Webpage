@@ -26,7 +26,16 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
 <style>
-body {font-family: "Lato", sans-serif}
+body {font-family: "Lato";
+  sans-serif;
+  background-color: white;
+  color: black;
+}
+.dark-mode {
+  background-color: #00001a;
+  color: #e6e6e6;
+}
+
 .mySlides {display: none}
 
 hr { 
@@ -119,7 +128,7 @@ p.ex {
     </div>
     </div>
      <a href="doc.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Documentation</a>
-    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+    <button class="w3-button w3-right" onclick="darkmode()"><i class="fa fa-moon-o"></i></button>
   </div>
 </div>
 
@@ -239,11 +248,18 @@ p.ex {
 </div>
 
 <!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+<footer class="w3-container w3-padding-8 w3-center w3-opacity w3-light-grey w3-xlarge">
   <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 
 <script>
+function darkmode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+//-------------------------------------------
+
 // Dispalys Slider value
 var slider_A = document.getElementById("myRange_Arctic");
 var output_A = document.getElementById("Arctic_Yearselect");

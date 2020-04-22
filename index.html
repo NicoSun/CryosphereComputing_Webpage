@@ -13,7 +13,15 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-body {font-family: "Lato", sans-serif}
+body {font-family: "Lato";
+  sans-serif;
+  background-color: white;
+  color: black;
+}
+.dark-mode {
+  background-color: #00001a;
+  color: #e6e6e6;
+}
 
 hr { 
   display: block;
@@ -25,6 +33,14 @@ hr {
   background-color: #e6e6e6; 
   color: black;
   border-radius: 8px; 
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 </style>
@@ -44,7 +60,7 @@ hr {
 
 <!-- Navbar -->
 <!-- div class="w3-top"-->
-  <div class="w3-bar w3-black w3-card">
+  <div class="w3-bar w3-black w3-card navbar">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">HOME</a>
     <a href="SIT.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">AMSR2 Snow & Ice Volume</a>
@@ -77,7 +93,7 @@ hr {
     </div>
     </div>
      <a href="doc.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Documentation</a>
-    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+    <button class="w3-button w3-right" onclick="darkmode()"><i class="fa fa-moon-o"></i></button>
   </div>
 </div>
 
@@ -240,11 +256,18 @@ Ice Data Center Distributed Active Archive Center. doi: https://doi.org/10.5067/
 </div>
 
 <!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+<footer class="w3-container w3-padding-8 w3-center w3-opacity w3-light-grey w3-xlarge">
   <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 
 <script>
+function darkmode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+//-------------------------------------------
+
 // Used to toggle the menu on small screens when clicking on the menu button
 function myFunction() {
   var x = document.getElementById("navDemo");

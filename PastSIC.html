@@ -23,7 +23,15 @@
 </script>
 
 <style>
-body {font-family: "Lato", sans-serif}
+body {font-family: "Lato";
+  sans-serif;
+  background-color: white;
+  color: black;
+}
+.dark-mode {
+  background-color: #00001a;
+  color: #e6e6e6;
+}
 
 hr { 
   display: block;
@@ -106,7 +114,7 @@ img {vertical-align: middle;}
     </div>
     </div>
      <a href="doc.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Documentation</a>
-    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+    <button class="w3-button w3-right" onclick="darkmode()"><i class="fa fa-moon-o"></i></button>
   </div>
 </div>
 
@@ -175,6 +183,13 @@ img {vertical-align: middle;}
 </div>
 
 <script>
+function darkmode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+//-------------------------------------------
+
 var fileending = "north"
 var daystring = "01"
 var monthstring = "09"

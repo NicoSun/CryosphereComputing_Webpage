@@ -11,8 +11,17 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
-body {font-family: "Lato", sans-serif}
+body {font-family: "Lato";
+  sans-serif;
+  background-color: white;
+  color: black;
+}
+.dark-mode {
+  background-color: #00001a;
+  color: #e6e6e6;
+}
 
 .buttonstyle {
   background-color: #e6e6e6; 
@@ -20,15 +29,22 @@ body {font-family: "Lato", sans-serif}
   border-radius: 8px; 
 }
 
-</style>
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
 
+</style>
 </head>
 
 <body>
 
 <!-- Navbar -->
 <!-- div class="w3-top"-->
-  <div class="w3-bar w3-black w3-card">
+  <div class="w3-bar w3-black w3-card navbar">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">HOME</a>
     <a href="SIT.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">AMSR2 Snow & Ice Volume</a>
@@ -61,7 +77,8 @@ body {font-family: "Lato", sans-serif}
     </div>
     </div>
      <a href="doc.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Documentation</a>
-    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+     
+     <button class="w3-button w3-right" onclick="darkmode()"><i class="fa fa-moon-o"></i></button>
   </div>
 </div>
 
@@ -137,11 +154,11 @@ Both grid cells below fulfill the 15% threshold and are counted as completely ic
 
      <p> Winter conditions</p>
       <div class="w3-half">
-        <img src="Documentation/Winter_refreeze.png" class="w3-round" >
+        <img src="Documentation/Winter_refreeze.png" class="w3-round" style="width:100%">
         <p> 26 Jan 2017, Sea of  Okhotsk, NASA (EOSDIS) Worldview</p>
       </div>
       <div class="w3-half">
-        <img src="Documentation/26_Jan_SoO.png" class="w3-round" >
+        <img src="Documentation/26_Jan_SoO.png" class="w3-round">
         <p> In winter, new sea ice is very thin and not a solid ice pack. Sometimes it forms so-called Pancake_ice, which is very prone to melt in stormy conditions. In recent years this type of ice cover has increased dramatically over the Arctic. You don't need to be a climate scientist to see that this type of ice cover has different thermodynamic properties (heat exchange between bodies) than a solid ice pack. The albedo (absorption of sunlight) and energy exchange between ocean-atmosphere is somewhere between an ice free ocean and a solid ice pack. So thermodynamically 50% ice concentration is quite accurate even though visually the ice concentration is close to 90%.</p>
       </div>
       <div class="w3-row"></div>
@@ -151,7 +168,7 @@ Both grid cells below fulfill the 15% threshold and are counted as completely ic
         <p> 23 Jul 2012, Arctic Ocean, NASA (EOSDIS) Worldview</p>
       </div>
       <div class="w3-half">
-        <img src="Documentation/23_Jul_2012_Arctic Ocean_con.png" class="w3-round" >
+        <img src="Documentation/23_Jul_2012_Arctic Ocean_con.png" class="w3-round">
         <p> During the melting season melt ponds lower the sea ice albedo and change thermodynamic interactions with the atmosphere.
          The measured sea ice concentration reflects this change. The low concentration areas have high melting potential, either 
          from melt ponds' low albedo, a very dispersed ice pack or both combined. Their high surface-area to volume ratio results in
@@ -183,7 +200,7 @@ Both grid cells below fulfill the 15% threshold and are counted as completely ic
             The calculated values are arithmetic averages over the whole maximum possible ice extent (shown in light blue). All lakes and some marginal seas 
             (Baltic Sea, Gulf of St. Lawrence) are not considered because their coastline to total area ratio is too high. Coastline measurement errors 
              introduce just random noise.</p>
-       <img src="Documentation/Arctic_max_ice_extent.png" class="w3-round" >
+       <img src="Documentation/Arctic_max_ice_extent.png" class="w3-round" style="width:100%">
       </div>
       <div class="w3-half">
         <p> 
@@ -262,11 +279,19 @@ Both grid cells below fulfill the 15% threshold and are counted as completely ic
 </div>
 
 <!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+<footer class="w3-container w3-padding-8 w3-center w3-opacity w3-light-grey w3-xlarge">
   <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 
 <script>
+
+function darkmode() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+
+//-------------------------------------------
+
 // Used to toggle the menu on small screens when clicking on the menu button
 function myFunction() {
   var x = document.getElementById("navDemo");

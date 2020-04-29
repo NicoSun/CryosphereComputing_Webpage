@@ -36,11 +36,15 @@ hr {
 }
 
 .navbar {
-  overflow: hidden;
   background-color: #333;
+  overflow: hidden;
   position: fixed;
   top: 0;
   width: 100%;
+}
+
+.dropdown {
+  position: fixed;
 }
 
 </style>
@@ -66,7 +70,7 @@ hr {
     <a href="SIT.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">AMSR2 Snow & Ice Volume</a>
         <div class="w3-dropdown-hover w3-hide-small">
       <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <div class="w3-dropdown-content w3-bar-block w3-card-4 dropdown">
         <a href="awp-region.html" class="w3-bar-item w3-button">Arctic region</a>
         <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
         <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
@@ -77,7 +81,7 @@ hr {
         
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="IceSheets.html" class="w3-padding-large w3-button">Ice Sheets<i class="fa fa-caret-down"></i></a>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <div class="w3-dropdown-content w3-bar-block w3-card-4 dropdown">
         <a href="Bedrock.html" class="w3-bar-item w3-button">Greenland Bedrock</a>
         <a href="Bedrock-Antarctica.html" class="w3-bar-item w3-button">Antarctica Bedrock</a>
         <a href="Glacier-size.html" class="w3-bar-item w3-button">Glacier Size</a>
@@ -86,7 +90,7 @@ hr {
         
     <div class="w3-dropdown-hover w3-hide-small">
       <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+      <div class="w3-dropdown-content w3-bar-block w3-card-4 dropdown">
         <a href="Snow-Cover.html" class="w3-bar-item w3-button">Snow Covered Days</a>
         <a href="IceFreeDays.html" class="w3-bar-item w3-button">Ice Free Days</a>
         <a href="PastSIC.html" class="w3-bar-item w3-button">Past Ice Maps</a>

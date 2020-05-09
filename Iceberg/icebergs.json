@@ -19,20 +19,20 @@
     },
     {
         "Iceberg": "A68A;  L:151.9km W:48.2km",
-        "Latitude": -60.55,
-        "Longitude": -50.37,
+        "Latitude": -60.53,
+        "Longitude": -50.34,
         "": ""
     },
     {
         "Iceberg": "A68B;  L:13.0km W:5.6km",
-        "Latitude": -62.7,
-        "Longitude": -57.28,
+        "Latitude": -62.62,
+        "Longitude": -58.29,
         "": ""
     },
     {
         "Iceberg": "A68C;  L:20.4km W:13.0km",
         "Latitude": -60.24,
-        "Longitude": -50.76,
+        "Longitude": -50.99,
         "": ""
     },
     {
@@ -49,8 +49,8 @@
     },
     {
         "Iceberg": "B09I;  L:22.2km W:11.1km",
-        "Latitude": -69.95,
-        "Longitude": 2.28,
+        "Latitude": -70.0,
+        "Longitude": -4.52,
         "": ""
     },
     {
@@ -80,19 +80,19 @@
     {
         "Iceberg": "B37;  L:14.8km W:5.6km",
         "Latitude": -72.65,
-        "Longitude": -111.59,
+        "Longitude": -111.67,
         "": ""
     },
     {
         "Iceberg": "B38;  L:11.1km W:7.4km",
-        "Latitude": -77.0,
-        "Longitude": -154.96,
+        "Latitude": -77.01,
+        "Longitude": -154.99,
         "": ""
     },
     {
         "Iceberg": "B39;  L:14.8km W:7.4km",
-        "Latitude": -67.3,
-        "Longitude": 75.45,
+        "Latitude": -67.55,
+        "Longitude": 75.57,
         "": ""
     },
     {
@@ -115,32 +115,32 @@
     },
     {
         "Iceberg": "B46;  L:18.5km W:7.4km",
-        "Latitude": -74.5,
-        "Longitude": -105.68,
+        "Latitude": -74.49,
+        "Longitude": -105.78,
         "": ""
     },
     {
         "Iceberg": "B47;  L:35.2km W:9.3km",
-        "Latitude": -73.76,
-        "Longitude": -133.72,
+        "Latitude": -73.78,
+        "Longitude": -133.74,
         "": ""
     },
     {
         "Iceberg": "B48;  L:22.2km W:3.7km",
-        "Latitude": -73.75,
-        "Longitude": -116.31,
+        "Latitude": -73.81,
+        "Longitude": -116.85,
         "": ""
     },
     {
         "Iceberg": "B49;  L:18.5km W:9.3km",
-        "Latitude": -74.41,
-        "Longitude": -105.2,
+        "Latitude": -74.39,
+        "Longitude": -105.3,
         "": ""
     },
     {
         "Iceberg": "B50;  L:27.8km W:11.1km",
-        "Latitude": -73.62,
-        "Longitude": -128.17,
+        "Latitude": -73.67,
+        "Longitude": -128.13,
         "": ""
     },
     {
@@ -152,7 +152,7 @@
     {
         "Iceberg": "C18B;  L:37.0km W:7.4km",
         "Latitude": -65.45,
-        "Longitude": 113.8,
+        "Longitude": 113.81,
         "": ""
     },
     {
@@ -187,14 +187,14 @@
     },
     {
         "Iceberg": "C33;  L:14.8km W:7.4km",
-        "Latitude": -65.06,
-        "Longitude": 136.36,
+        "Latitude": -64.75,
+        "Longitude": 134.24,
         "": ""
     },
     {
         "Iceberg": "C34;  L:20.4km W:9.3km",
-        "Latitude": -64.69,
-        "Longitude": 101.53,
+        "Latitude": -64.96,
+        "Longitude": 100.54,
         "": ""
     },
     {
@@ -211,14 +211,14 @@
     },
     {
         "Iceberg": "D15A;  L:94.5km W:44.4km",
-        "Latitude": -66.65,
-        "Longitude": 81.92,
+        "Latitude": -66.64,
+        "Longitude": 81.91,
         "": ""
     },
     {
         "Iceberg": "D15B;  L:61.1km W:22.2km",
         "Latitude": -66.99,
-        "Longitude": 81.58,
+        "Longitude": 81.57,
         "": ""
     },
     {
@@ -229,8 +229,8 @@
     },
     {
         "Iceberg": "D21B;  L:20.4km W:7.4km",
-        "Latitude": -71.35,
-        "Longitude": -43.57,
+        "Latitude": -71.01,
+        "Longitude": -43.92,
         "": ""
     },
     {
@@ -241,8 +241,8 @@
     },
     {
         "Iceberg": "D26;  L:35.2km W:3.7km",
-        "Latitude": -69.36,
-        "Longitude": 29.4,
+        "Latitude": -69.4,
+        "Longitude": 29.33,
         "": ""
     },
     {
@@ -253,8 +253,8 @@
     },
     {
         "Iceberg": "D28;  L:53.7km W:35.2km",
-        "Latitude": -66.31,
-        "Longitude": 71.85,
+        "Latitude": -66.37,
+        "Longitude": 71.2,
         "": ""
     }
 ]

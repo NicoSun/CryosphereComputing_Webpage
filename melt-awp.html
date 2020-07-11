@@ -85,8 +85,14 @@ img.ex {
 
 p.ex {
   padding: 40px;
+  text-align: left;
 }
 
+.buttonstyle {
+  background-color: #e6e6e6; 
+  color: black;
+  border-radius: 8px; 
+}
 
 </style>
 
@@ -108,6 +114,7 @@ p.ex {
         <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
         <a href="awp-south-region.html" class="w3-bar-item w3-button">Antarctic region</a>
         <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
+        <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
         </div>
         </div>
         
@@ -163,7 +170,7 @@ p.ex {
     <!-- Pan Arctic -->
   <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1600px" id="AWP">
     <h1 class="w3-wide">Ice Melting Arctic Albedo-Warming Potential</h1>
-    <p class="w3-opacity"><i>Test phase</i></p>
+    <h4 class="w3-opacity"><i>Beta phase product. May change slightly</i></h4>
     <div class="w3-row w3-padding-12">
     </div>
 
@@ -182,34 +189,16 @@ p.ex {
 <div class="w3-row">
 
     <!-- AWP Arctic percent -->
+    
+<div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1600px" id="AWP">
 <div class="w3-half">
 <img id="Melt_AWP_A" src="Melt_AWP/AWP_melt__2000.png">
 </div>
-
 <div class="w3-half">
-<p class="ex"> The long term downwards trend is caused by reduced sea ice cover and a general northward movement of the melting regions. 
-The input solar energy never changes in the model and can be considered constant in the real world as well. Greenhouse gases are not 
-an extra energy input into the system. They only insulate it (in terms of radiation) against the coldness of space.
-
-</p><p class="ex">
-
-Supposedly high melt areas on the coastline are just coastline measurement errors. Instead of the typical 15% SIC used to classify a gridcell as ice covered
-this model uses 25% to reduce these measurement errors. They dominate late season values in mostly icefree seas.
-</p><p class="ex">
-Areas with low melt regions right next to high melt regions are areas where the sea ice was blown away by winds and currents. Even though they
-are icefree and accoumaled huge AWP anomalies the never had actual ice melting in this place. Notable recurring areas are southern Beaufort Sea, Laptev Sea,
- Northern Baffin Bay and Hudson Bay.
-</p><p class="ex">
-Large Areas with very high melt AWP have experienced ice melt throuout the summer. Winds and currents have pushed ice into these areas and have been a melting
- spot all the time. Notable are Northern Greenland Sea, Eastern-Central Beaufort Sea and Northern Greenland Sea.
-
- 
-
-
-</p>
+<img id="Melt_AWP_B" src="Melt_AWP/AWP_anom_2000.png">
+</div>
 </div>
 
-<div class="w3-row">
 
 <center>
 <div class="slidecontainer">
@@ -218,6 +207,41 @@ Large Areas with very high melt AWP have experienced ice melt throuout the summe
   <input type="range" min="1979" max="2019" value="2000" class="slider" id="Percentslider" style="width:66%">
 </div>
 </center>
+
+<div class="w3-row">
+
+
+
+<div class="w3-half">
+  <img src="Melt_AWP/AWP_melt__Mean.png"  style="width:80%">
+</div>
+
+<div class="w3-half">
+
+<p class="ex"> The Ice-Melt AWP is the AWP model applied only over a sea ice concentration of 25% or more. Ice-free regions do not accumulate anything 
+as there is no ice to melt. Instead of an area unit (MJ per m2) ice-melt AWP is measured in absolute energy values (TJ). This change better reflects the larger melting potential of large regions.<br>
+Counting AWP only over sea ice results in low values appearing both in warm and cold regions. In a warm region there is no ice to melt at all. In cold regions with high ice concentration 
+and a high albedo the ice doesn’t absorb much sunlight and melting from sunshine remains low throughout the summer.<br>
+<br>
+The conditions in regions with high values are dispersed sea ice, melt ponds and the ice edge. Due to the sensor limitations and large grid cell size the
+ sea ice edge does show exaggerated values. Grid cells near the coast experience a coastline measurement error. To reduce this noise the lower limit of
+  sea ice concentration was chosen to be 25% and not 15% as used in sea ice extent measurements.<br><br>
+ The long term downwards trend is caused by reduced sea ice cover and a general northward movement of the melting regions. 
+The amount of solar energy received is the same every year. Greenhouse gases (not accounted for in this model) are not 
+an extra energy input into the system. They only insulate it (in terms of radiation) against the coldness of space.<br><br>
+
+Even though this is a very limited model for ice melting physics large, high AWP Areas correlate well with real the world main melting areas. (Northern Greenland Sea, Eastern-Central Beaufort Sea)
+Likewise, areas with low AWP for example southern Beaufort and Laptev Sea never experience high melt because the sea ice just drifts away.<br><br>
+
+Despite the simple physics and less meaningful values the spatial distribution seen in maps and decadal changes seen in graphs can give a better understanding of the melting processes.
+</p>
+
+
+</div>
+
+<div class="w3-row">
+
+
 
 
 <hr>
@@ -256,6 +280,18 @@ Large Areas with very high melt AWP have experienced ice melt throuout the summe
   <input type="range" min="1" max="13" value="13" class="slider" id="Regionslider" style="width:66%">
 </div>
 </center>
+
+<button onclick="showRegionheatmap()" class="w3-button buttonstyle w3-padding-large">Region Heatmap</button>
+<div id="Regionheatmap">
+
+<div class="w3-half">
+<img  src="Melt_AWP/Region_Heatmap.png" style="height:100%">
+</div> 
+<div class="w3-half">
+<img src="Melt_AWP/Region_Heatmap_anom.png" style="height:100%">
+</div>
+
+</div>
 
 
 </div>
@@ -318,11 +354,13 @@ slider.oninput = function() {
   
   //update image
 	var imageid = "Melt_AWP/AWP_melt__" + slider.value + ".png";
-	showimage_precent(imageid);
+	var imageid_anom = "Melt_AWP/AWP_anom_" + slider.value + ".png";
+	showimage_precent(imageid,imageid_anom);
 } 
 
-function showimage_precent (imageid){
+function showimage_precent (imageid,imageid_anom){
 document.getElementById("Melt_AWP_A").src = imageid;
+document.getElementById("Melt_AWP_B").src = imageid_anom;
 }
 
 
@@ -365,11 +403,12 @@ Highcharts.chart('Accumulated', {
     },
     series: [{
         name: 'AWP',
-        data: [609,621,635,606,621,599,615,595,613,602,586,589,596,602,614,608,579,584,587,620,614,611,600,576,602,
-        561,559,562,576,583,566,577,558,578,571,548,562,552,534,532,538]
+        data: [9726,9911,10140,9678,9918,9565,9814,9495,9792,9616,9354,9400,9516,9620,9810,9715,9248,9329,9369,9906,9797,9755,
+        9573,9196,9609,8960,8931,8976,9205,9309,9036,9214,8908,9227,9120,8753,8976,8807,8519,8493,8590]
     },{
         name: 'Anomaly Base 2000-2019',
-        data: [42,53,68,39,54,32,47,27,46,35,19,21,29,35,47,41,12,17,19,53,46,44,32,9,35,-6,-8,-5,9,16,-1,10,-9,11,4,-19,-5,-16,-34,-35,-29]
+        data: [668,854,1082,620,860,507,756,437,735,559,296,342,458,562,752,657,190,271,311,848,739,697,515,138,552,-98,-127,
+        -82,147,251,-21,156,-150,169,63,-305,-81,-251,-539,-564,-468]
     }]
     
 });
@@ -412,12 +451,12 @@ Highcharts.chart('Accumulated_central', {
     },
     series: [{
         name: 'AWP',
-        data: [654,680,700,630,670,661,681,658,650,662,646,634,666,659,684,688,660,655,659,696,698,714,694,679,702,
-        665,653,694,682,697,656,694,659,683,681,643,672,695,634,647,655]
+        data: [5789,6016,6194,5577,5928,5852,6025,5822,5757,5861,5715,5614,5897,5830,6055,6092,5844,5799,5838,
+        6161,6179,6319,6144,6008,6213,5885,5777,6147,6034,6174,5810,6144,5836,6042,6029,5691,5950,6151,5610,5725,5801]
     },{
         name: 'Anomaly Base 2000-2019',
-        data: [-21,5,25,-45,-5,-14,6,-17,-25,-13,-29,-41,-9,-16,9,13,-15,-20,-15,21,23,39,19,4,27,-10,-22,19,7,22,
-        -19,19,-16,8,6,-32,-3,20,-41,-28,-20]
+        data: [-185,42,220,-398,-46,-123,50,-152,-218,-114,-260,-361,-78,-145,80,118,-131,-176,-137,186,204,345,169,33,
+        239,-89,-197,172,60,199,-164,169,-138,68,54,-284,-25,177,-365,-249,-174]
     }]
     
 });
@@ -435,6 +474,17 @@ function myFunction() {
     x.className += " w3-show";
   } else { 
     x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+showRegionheatmap()
+// Used to toggle the region heatmap
+function showRegionheatmap() {
+  var x = document.getElementById("Regionheatmap");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
   }
 }
 

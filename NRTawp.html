@@ -65,6 +65,7 @@ hr {
         <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
         <a href="awp-south-region.html" class="w3-bar-item w3-button">Antarctic region</a>
         <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
+        <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
         </div>
         </div>
         
@@ -103,6 +104,7 @@ hr {
         <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
         <a href="awp-south-region.html" class="w3-bar-item w3-button">Antarctic region</a>
         <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
+        
         </div>
         </div>
   
@@ -120,6 +122,12 @@ hr {
 
 
 
+
+
+
+
+</div>
+
     <!-- Arctic -->
   <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="SIT">
   <div class="w3-center">
@@ -129,12 +137,15 @@ hr {
             <img src="https://drive.google.com/uc?id=12evR0ILF3_BO0Vb-Lc5jWS6XjRRPk3dI&export=download" class="w3-round" height="700">
           </div>
           <div class="w3-half">
-            <img src="https://drive.google.com/uc?id=1JGQfqYnTpDqzTDuYijaiZJhh-aDPXBk6&export=download" class="w3-round" style="width:100%">
+            <img src="https://drive.google.com/uc?id=1b8NHrWf-nX5V755QMBY5tf6zejXwN21i&export=download" class="w3-round" height="700">
           </div>
           </div>
       <div class="w3-row w3-padding-12">
+
+      <button onclick="showabsolute_values()" class="w3-button buttonstyle w3-padding-large">show graphs</button>
+      <div id="absolute_graphs">
       <div class="w3-half">
-            <img src="https://drive.google.com/uc?id=1b8NHrWf-nX5V755QMBY5tf6zejXwN21i&export=download" class="w3-round" height="700">
+            <img src="https://drive.google.com/uc?id=1JGQfqYnTpDqzTDuYijaiZJhh-aDPXBk6&export=download" class="w3-round" style="width:100%">
           </div>
           <div class="w3-half">
             <img src="https://drive.google.com/uc?id=1WjOkY4rJKKYZeEb2QnZoKxW-o2IdtB7z&export=download" class="w3-round" style="width:100%">
@@ -226,6 +237,18 @@ function myFunction() {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+
+showabsolute_values()
+// Used to toggle the region heatmap
+function showabsolute_values() {
+  var x = document.getElementById("absolute_graphs");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
 
 </script>
 

@@ -226,14 +226,21 @@ and a high albedo the ice doesn’t absorb much sunlight and melting from sunshi
 The conditions in regions with high values are dispersed sea ice, melt ponds and the ice edge. Due to the sensor limitations and large grid cell size the
  sea ice edge does show exaggerated values. Grid cells near the coast experience a coastline measurement error. To reduce this noise the lower limit of
   sea ice concentration was chosen to be 25% and not 15% as used in sea ice extent measurements.<br><br>
- The long term downwards trend is caused by reduced sea ice cover and a general northward movement of the melting regions. 
-The amount of solar energy received is the same every year. Greenhouse gases (not accounted for in this model) are not 
-an extra energy input into the system. They only insulate it (in terms of radiation) against the coldness of space.<br><br>
 
-Even though this is a very limited model for ice melting physics large, high AWP Areas correlate well with real the world main melting areas. (Northern Greenland Sea, Eastern-Central Beaufort Sea)
-Likewise, areas with low AWP for example southern Beaufort and Laptev Sea never experience high melt because the sea ice just drifts away.<br><br>
+Additionly this model includes heat loss to space. Around 4-6 MJ/m2/day depending on the month and CO2 level. The level of heat loss was chosen
+ to be the same as the in Sea Ice Forecast model submitted to the Sea Ice Prediction Network. This heat loss adjustment per CO2 level is necessary to avoid over prediction
+  of ice loss in the 1980s and under prediction of ice loss in the 2000s and 2010s<br>
+<a href=https://www.arcus.org/sipn/sea-ice-outlook/2020/june> June 2020 forecast(Nico Sun) </a> <br>
+<br>
+Heatloss example (per day per m2):<br>
+Temp(K):	MJ @ 400ppm CO2<br>
+250:	4.14<br>
+260:	4.82<br>
+270:	5.60<br>
+274: 	5.94
+<br><br>
 
-Despite the simple physics and less meaningful values the spatial distribution seen in maps and decadal changes seen in graphs can give a better understanding of the melting processes.
+
 </p>
 
 
@@ -282,8 +289,9 @@ Despite the simple physics and less meaningful values the spatial distribution s
 </center>
 
 <button onclick="showRegionheatmap()" class="w3-button buttonstyle w3-padding-large">Region Heatmap</button>
-<div id="Regionheatmap">
+<div class="w3-row">
 
+<div id="Regionheatmap">
 <div class="w3-half">
 <img  src="Melt_AWP/Region_Heatmap.png" style="height:100%">
 </div> 
@@ -382,14 +390,14 @@ Highcharts.chart('Accumulated', {
     },
     yAxis: {
         title: {
-            text: 'AWP (MJ / m2)',
+            text: 'AWP (TJ)',
         },
         labels: {
             overflow: 'justify'
         }
     },
     tooltip: {
-        valueSuffix: ' MJ / m2'
+        valueSuffix: ' TJ'
     },
     plotOptions: {
         bar: {
@@ -403,12 +411,12 @@ Highcharts.chart('Accumulated', {
     },
     series: [{
         name: 'AWP',
-        data: [9726,9911,10140,9678,9918,9565,9814,9495,9792,9616,9354,9400,9516,9620,9810,9715,9248,9329,9369,9906,9797,9755,
-        9573,9196,9609,8960,8931,8976,9205,9309,9036,9214,8908,9227,9120,8753,8976,8807,8519,8493,8590]
+        data: [622,829,1203,570,901,837,1051,697,950,949,806,1237,1078,1004,1501,1209,1297,868,1190,1680,1612,1708,1425,1356,1732,1228,1433,1584,2128,1926,
+        1552,1985,1902,2342,1820,1594,2008,2112,1662,1640,2009]
     },{
         name: 'Anomaly Base 2000-2019',
-        data: [668,854,1082,620,860,507,756,437,735,559,296,342,458,562,752,657,190,271,311,848,739,697,515,138,552,-98,-127,
-        -82,147,251,-21,156,-150,169,63,-305,-81,-251,-539,-564,-468]
+        data: [-1134,-928,-554,-1188,-857,-920,-706,-1061,-807,-808,-951,-520,-679,-753,-256,-548,-461,-889,
+			   -567,-77,-145,-49,-333,-401,-25,-529,-324,-173,370,169,-206,228,145,585,62,-164,250,355,-95,-117,252]
     }]
     
 });
@@ -430,14 +438,14 @@ Highcharts.chart('Accumulated_central', {
     },
     yAxis: {
         title: {
-            text: 'AWP (MJ / m2)',
+            text: 'AWP (TJ)',
         },
         labels: {
             overflow: 'justify'
         }
     },
     tooltip: {
-        valueSuffix: ' MJ / m2'
+        valueSuffix: ' TJ'
     },
     plotOptions: {
         bar: {
@@ -451,12 +459,12 @@ Highcharts.chart('Accumulated_central', {
     },
     series: [{
         name: 'AWP',
-        data: [5789,6016,6194,5577,5928,5852,6025,5822,5757,5861,5715,5614,5897,5830,6055,6092,5844,5799,5838,
-        6161,6179,6319,6144,6008,6213,5885,5777,6147,6034,6174,5810,6144,5836,6042,6029,5691,5950,6151,5610,5725,5801]
+        data: [-877,-624,-335,-963,-661,-633,-432,-691,-667,-540,-625,-420,-373,-496,23,-251,-77,-595,-261,75,117,255,-27,36,245,-55,64,346,704,622,
+        205,662,563,956,482,221,698,968,368,433,759]
     },{
         name: 'Anomaly Base 2000-2019',
-        data: [-185,42,220,-398,-46,-123,50,-152,-218,-114,-260,-361,-78,-145,80,118,-131,-176,-137,186,204,345,169,33,
-        239,-89,-197,172,60,199,-164,169,-138,68,54,-284,-25,177,-365,-249,-174]
+        data: [-1303,-1049,-760,-1388,-1086,-1058,-857,-1117,-1092,-965,-1050,-845,-799,-922,-402,-677,-503,-1020,-686,-350,-309,-170,-452,-389,
+        -180,-480,-361,-79,278,196,-221,236,137,531,56,-204,273,543,-57,8,334]
     }]
     
 });

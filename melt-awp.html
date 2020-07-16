@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Albedo-Warming Potential (AWP)</title>
+<title>Ice Melt AWP</title>
 <head>
 
 <link REL="SHORTCUT ICON" href="CC.ico" type="image/x-icon"> 
@@ -94,6 +94,24 @@ p.ex {
   border-radius: 8px; 
 }
 
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  background-color: #ffffff;
+  height: 225px;
+}
+
+.column a {
+  float: none;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
 </style>
 
 </head>
@@ -109,12 +127,19 @@ p.ex {
         <div class="w3-dropdown-hover w3-hide-small">
       <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="awp-region.html" class="w3-bar-item w3-button">Arctic region</a>
-        <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
-        <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
-        <a href="awp-south-region.html" class="w3-bar-item w3-button">Antarctic region</a>
-        <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
-        <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
+       <div class="row">
+        <div class="column">
+          <a href="awp-region.html" class="w3-bar-item w3-button">Arctic region</a>
+          <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
+          <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
+          <a href="awp-south-region.html" class="w3-bar-item w3-button">Antarctic region</a>
+          <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
+        </div>
+        <div class="column">
+          <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
+        </div>
+
+        </div>
         </div>
         </div>
         
@@ -219,7 +244,7 @@ p.ex {
 <div class="w3-half">
 
 <p class="ex"> The Ice-Melt AWP is the AWP model applied only over a sea ice concentration of 25% or more. Ice-free regions do not accumulate anything 
-as there is no ice to melt. Instead of an area unit (MJ per m2) ice-melt AWP is measured in absolute energy values (TJ). This change better reflects the larger melting potential of large regions.<br>
+as there is no ice to melt. Instead of an area unit (MJ per m2) ice-melt AWP is measured in an absolute energy value Exajoule (EJ). This change better reflects the larger melting potential of large regions.<br>
 Counting AWP only over sea ice results in low values appearing both in warm and cold regions. In a warm region there is no ice to melt at all. In cold regions with high ice concentration 
 and a high albedo the ice doesn’t absorb much sunlight and melting from sunshine remains low throughout the summer.<br>
 <br>
@@ -227,10 +252,12 @@ The conditions in regions with high values are dispersed sea ice, melt ponds and
  sea ice edge does show exaggerated values. Grid cells near the coast experience a coastline measurement error. To reduce this noise the lower limit of
   sea ice concentration was chosen to be 25% and not 15% as used in sea ice extent measurements.<br><br>
 
-Additionly this model includes heat loss to space. Around 4-6 MJ/m2/day depending on the month and CO2 level. The level of heat loss was chosen
- to be the same as the in Sea Ice Forecast model submitted to the Sea Ice Prediction Network. This heat loss adjustment per CO2 level is necessary to avoid over prediction
-  of ice loss in the 1980s and under prediction of ice loss in the 2000s and 2010s<br>
-<a href=https://www.arcus.org/sipn/sea-ice-outlook/2020/june> June 2020 forecast(Nico Sun) </a> <br>
+Additionally, this model includes heat loss to space. Around 4-6 MJ/m2/day depending on the month and CO2 level. The level of heat loss was chosen to be the same
+ as in my Sea Ice Forecast model submitted to the Sea Ice Prediction Network. This heat loss adjustment per CO2 level is necessary to avoid over prediction
+  of ice loss in the 1980s and under prediction of ice loss in the 2000s and 2010s. In the model the late 2010s at around 410ppm have an 11% reduced heat loss
+   compared to the early 1980s 340ppm.<br>
+  
+<a href=https://www.arcus.org/sipn/sea-ice-outlook/2020/june>see June 2020 forecast(Nico Sun) </a> <br>
 <br>
 Heatloss example (per day per m2):<br>
 Temp(K):	MJ @ 400ppm CO2<br>
@@ -240,7 +267,9 @@ Temp(K):	MJ @ 400ppm CO2<br>
 274: 	5.94
 <br><br>
 
-
+Without an ice thickness variable, a negative energy balance cannot be used to estimate sea ice thickness growth. Apart from comparison to other years the values 
+in Exajoule don't hold much real world meaning. The model’s main purpose is to visualise where melt
+ happened and rank years accordingly. For sea ice volume information the AMSR2 ice thickness model is better suited.
 </p>
 
 
@@ -390,14 +419,14 @@ Highcharts.chart('Accumulated', {
     },
     yAxis: {
         title: {
-            text: 'AWP (TJ)',
+            text: 'AWP (EJ)',
         },
         labels: {
             overflow: 'justify'
         }
     },
     tooltip: {
-        valueSuffix: ' TJ'
+        valueSuffix: ' EJ'
     },
     plotOptions: {
         bar: {
@@ -411,12 +440,12 @@ Highcharts.chart('Accumulated', {
     },
     series: [{
         name: 'AWP',
-        data: [622,829,1203,570,901,837,1051,697,950,949,806,1237,1078,1004,1501,1209,1297,868,1190,1680,1612,1708,1425,1356,1732,1228,1433,1584,2128,1926,
-        1552,1985,1902,2342,1820,1594,2008,2112,1662,1640,2009]
+        data: [-2239,-2079,-1677,-2358,-2012,-1963,-1733,-2132,-1894,-1818,-1962,-1337,-1610,-1782,-1129,-1520,-1210,
+        -1886,-1411,-929,-974,-848,-1147,-1116,-756,-1235,-921,-744,-57,-371,-781,-228,-246,270,-451,-633,-156,54,-459,-492,-10]
     },{
         name: 'Anomaly Base 2000-2019',
-        data: [-1134,-928,-554,-1188,-857,-920,-706,-1061,-807,-808,-951,-520,-679,-753,-256,-548,-461,-889,
-			   -567,-77,-145,-49,-333,-401,-25,-529,-324,-173,370,169,-206,228,145,585,62,-164,250,355,-95,-117,252]
+        data: [-1723,-1563,-1161,-1842,-1496,-1447,-1217,-1616,-1378,-1302,-1446,-821,-1093,-1266,-613,-1004,-693,
+			   -1370,-895,-413,-457,-332,-631,-600,-240,-719,-405,-228,460,146,-265,288,271,787,66,-117,361,570,57,25,506]
     }]
     
 });
@@ -438,14 +467,14 @@ Highcharts.chart('Accumulated_central', {
     },
     yAxis: {
         title: {
-            text: 'AWP (TJ)',
+            text: 'AWP (EJ)',
         },
         labels: {
             overflow: 'justify'
         }
     },
     tooltip: {
-        valueSuffix: ' TJ'
+        valueSuffix: ' EJ'
     },
     plotOptions: {
         bar: {
@@ -459,12 +488,12 @@ Highcharts.chart('Accumulated_central', {
     },
     series: [{
         name: 'AWP',
-        data: [-877,-624,-335,-963,-661,-633,-432,-691,-667,-540,-625,-420,-373,-496,23,-251,-77,-595,-261,75,117,255,-27,36,245,-55,64,346,704,622,
-        205,662,563,956,482,221,698,968,368,433,759]
+        data: [-3122,-2905,-2571,-3207,-2929,-2857,-2644,-2927,-2864,-2728,-2791,-2449,-2512,-2656,-2007,-2424,-2066,-2791,-2327,-1991,-1948,-1806,
+        -2134,-1988,-1777,-2069,-1848,-1608,-1044,-1228,-1667,-1159,-1163,-695,-1373,-1600,-1028,-736,-1357,-1320,-880]
     },{
         name: 'Anomaly Base 2000-2019',
-        data: [-1303,-1049,-760,-1388,-1086,-1058,-857,-1117,-1092,-965,-1050,-845,-799,-922,-402,-677,-503,-1020,-686,-350,-309,-170,-452,-389,
-        -180,-480,-361,-79,278,196,-221,236,137,531,56,-204,273,543,-57,8,334]
+        data: [-1698,-1481,-1147,-1783,-1506,-1433,-1220,-1503,-1440,-1304,-1367,-1025,-1088,-1232,-583,-1000,-642,-1367,-903,-567,-524,-382,-710,
+        -564,-353,-645,-424,-184,380,196,-243,265,261,729,51,-176,396,688,67,104,544]
     }]
     
 });

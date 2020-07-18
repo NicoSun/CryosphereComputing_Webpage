@@ -22,6 +22,24 @@ body {font-family: "Lato";
   color: #e6e6e6;
 }
 
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  background-color: #ffffff;
+  height: 190px;
+}
+
+.column a {
+  float: none;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
 </style>
 
 </head>
@@ -37,12 +55,19 @@ body {font-family: "Lato";
         <div class="w3-dropdown-hover w3-hide-small">
       <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="awp-region.html" class="w3-bar-item w3-button">Arctic region</a>
-        <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
-        <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
-        <a href="awp-south-region.html" class="w3-bar-item w3-button">Antarctic region</a>
-        <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
-        <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
+       <div class="row">
+        <div class="column">
+          <a href="awp-region.html" class="w3-bar-item w3-button">AWP regional</a>
+          <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
+          <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
+          <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
+        </div>
+        <div class="column">
+          <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
+          <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
+        </div>
+
+        </div>
         </div>
         </div>
         
@@ -70,20 +95,21 @@ body {font-family: "Lato";
 
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
 <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">HOME</a>
+  <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
   <a href="SIT.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">AMSR2 Snow & Ice Volume</a>
   
     <div class="w3-dropdown-hover">
   <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
     <div class="w3-dropdown-content w3-bar-block w3-card-4">
-    <a href="awp-region.html" class="w3-bar-item w3-button">Arctic region</a>
-        <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
-        <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
-        <a href="awp-south-region.html" class="w3-bar-item w3-button">Antarctic region</a>
-        <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
+     <a href="awp-region.html" class="w3-bar-item w3-button">AWP regional</a>
+          <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
+          <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
+          <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
+          <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
+          <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
         </div>
         </div>
-  
+  <a href="IceSheets.html" class="w3-padding-large w3-button">Ice Sheets<i></i></a>
   <div class="w3-dropdown-hover">
   <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -97,58 +123,59 @@ body {font-family: "Lato";
 
     <!-- Sea Ice Area -->
   <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="SIA">
-    <h2 class="w3-wide">Lower Arctic</h2>
+    <h2 class="w3-wide">Arctic</h2>
     <p class="ex">AWP jumps are due to the elimination of coastline measurement errors</p>
     <div class="w3-row w3-padding-12">
       <div class="w3-half">
-
-        <img src="AWP_regional/AWP_Daily_Sea of Okhotsk.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Daily_Bering Sea.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Daily_Hudson Bay.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Daily_Baffin Bay.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Daily_East Greenland Sea.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Daily_Barents Sea.png" class="w3-round" style="width:100%">
-
+      <img id="AWP_RegionD" src="AWP_regional/North_AWP_RegionD13.png" style="width:100%">
+      </div> 
+      <div class="w3-half">
+      <img id="AWP_RegionA" src="AWP_regional/North_AWP_RegionA13.png" style="width:100%">
       </div>
-            <div class="w3-half">
-        <img src="AWP_regional/AWP_Accu_Sea of Okhotsk.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Accu_Bering Sea.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Accu_Hudson Bay.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Accu_Baffin Bay.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Accu_East Greenland Sea.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Accu_Barents Sea.png" class="w3-round" style="width:100%">
-
-      </div>
+      <div class="w3-row">
+      
+<center>
+<div class="slidecontainer">
+    <span>Region:</span>
+    <span id="AWP_Regionselect" style="font-weight:bold;color:red">13</span>
+  <input type="range" min="1" max="13" value="13" class="slider" id="Regionslider" style="width:66%">
+</div>
+</center>
 
 <div class="w3-row"></div>
 
-<h2 class="w3-wide">High Arctic</h2>
+<h2 class="w3-wide">Antarctic</h2>
     <div class="w3-row w3-padding-12">
       <div class="w3-half">
+      <img id="AWP_RegionD_south" src="AWP_regional/South_AWP_RegionD5.png" style="width:100%">
+      </div> 
+      <div class="w3-half">
+      <img id="AWP_RegionA_south" src="AWP_regional/South_AWP_RegionA5.png" style="width:100%">
+      </div>
+      <div class="w3-row">
+      
+      
+<center>
+<div class="slidecontainer">
+    <span>Region:</span>
+    <span id="AWP_Regionselect_south" style="font-weight:bold;color:red">13</span>
+  <input type="range" min="1" max="5" value="5" class="slider" id="Regionslider_south" style="width:66%">
+</div>
+</center>
 
-        <img src="AWP_regional/AWP_Daily_Kara Sea.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Daily_Laptev Sea.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Daily_East Siberian Sea.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Daily_Chukchi Sea.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Daily_Beaufort Sea.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Daily_Canadian Archipelago.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Daily_Central Arctic.png" class="w3-round" style="width:100%">
-      </div>
-            <div class="w3-half">
-        <img src="AWP_regional/AWP_Accu_Kara Sea.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Accu_Laptev Sea.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Accu_East Siberian Sea.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Accu_Chukchi Sea.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Accu_Beaufort Sea.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Accu_Canadian Archipelago.png" class="w3-round" style="width:100%">
-        <img src="AWP_regional/AWP_Accu_Central Arctic.png" class="w3-round" style="width:100%">
-      </div>
 
 <div class="w3-row"></div>
 
       <h2 class="w3-wide">Heatmap</h2>
     <p class="ex">AWP in percent of Icefree conditions</p>
-    <img src="AWP_regional/AWP_Heatmap.png" class="w3-round">
+
+<div class="w3-half">
+<img  src="AWP_regional/Region_Heatmap.png" style="height:100%">
+</div> 
+<div class="w3-half">
+<img src="AWP_regional/Region_Heatmap_south.png" style="height:100%">
+</div>
+    
   
 <!-- End Page Content -->
 </div>
@@ -167,6 +194,50 @@ function darkmode() {
    element.classList.toggle("dark-mode");
 }
 
+// ------------------------------------------
+// Melt AWP map region graphs
+
+var sliderR = document.getElementById("Regionslider");
+var outputR = document.getElementById("AWP_Regionselect");
+outputR.innerHTML = sliderR.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+sliderR.oninput = function() {
+  outputR.innerHTML = this.value;
+  
+  //update image
+	var imageid_D = "AWP_regional/North_AWP_RegionD" + sliderR.value + ".png";
+	var imageid_A = "AWP_regional/North_AWP_RegionA" + sliderR.value + ".png";
+	showimage_Regions(imageid_D,imageid_A);
+} 
+
+function showimage_Regions (imageid_D,imageid_A){
+document.getElementById("AWP_RegionD").src = imageid_D;
+document.getElementById("AWP_RegionA").src = imageid_A;
+}
+
+// ------------------------------------------
+// Melt AWP map region graphs south
+
+var sliderR_south = document.getElementById("Regionslider_south");
+var outputR_south = document.getElementById("AWP_Regionselect_south");
+outputR_south.innerHTML = sliderR_south.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+sliderR_south.oninput = function() {
+  outputR_south.innerHTML = this.value;
+  
+  //update image
+	var imageid_D_south = "AWP_regional/South_AWP_RegionD" + sliderR_south.value + ".png";
+	var imageid_A_south = "AWP_regional/South_AWP_RegionA" + sliderR_south.value + ".png";
+	showimage_Regions_south(imageid_D_south,imageid_A_south);
+} 
+
+function showimage_Regions_south (imageid_D_south,imageid_A_south){
+document.getElementById("AWP_RegionD_south").src = imageid_D_south;
+document.getElementById("AWP_RegionA_south").src = imageid_A_south;
+}
+
 //-------------------------------------------
 
 // Used to toggle the menu on small screens when clicking on the menu button
@@ -178,6 +249,7 @@ function myFunction() {
     x.className = x.className.replace(" w3-show", "");
   }
 }
+
 
 </script>
 

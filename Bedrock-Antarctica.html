@@ -175,10 +175,21 @@ function initComparisons() {
         <div class="w3-dropdown-hover w3-hide-small">
       <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="NRTawp.html" class="w3-bar-item w3-button">NRT AWP</a>
+       <div class="row">
+        <div class="column">
+          <a href="awp-region.html" class="w3-bar-item w3-button">AWP regional</a>
+          <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
+          <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
+          <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
+        </div>
+        <div class="column">
+          <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
+          <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
+        </div>
+
         </div>
         </div>
-        
+        </div>
       <div class="w3-dropdown-hover w3-hide-small">
       <a href="IceSheets.html" class="w3-padding-large w3-button">Ice Sheets<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -203,16 +214,21 @@ function initComparisons() {
 
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
 <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">HOME</a>
+  <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
   <a href="SIT.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">AMSR2 Snow & Ice Volume</a>
   
     <div class="w3-dropdown-hover">
   <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
     <div class="w3-dropdown-content w3-bar-block w3-card-4">
-    <a href="NRTawp.html" class="w3-bar-item w3-button">NRT AWP</a>
+     <a href="awp-region.html" class="w3-bar-item w3-button">AWP regional</a>
+          <a href="awp-south.html" class="w3-bar-item w3-button">Antarctic</a>
+          <a href="NRTawp.html" class="w3-bar-item w3-button">Arctic NRT</a>
+          <a href="NRTawp-south.html" class="w3-bar-item w3-button">Antarctic NRT</a>
+          <a href="melt-awp.html" class="w3-bar-item w3-button">Ice-Melt AWP</a>
+          <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
         </div>
         </div>
-  
+  <a href="IceSheets.html" class="w3-padding-large w3-button">Ice Sheets<i></i></a>
   <div class="w3-dropdown-hover">
   <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">

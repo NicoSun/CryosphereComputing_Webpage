@@ -61,15 +61,13 @@ body {font-family: "Lato";
 </head>
 
 <body>
-
 <!-- Navbar -->
 <!-- div class="w3-top"-->
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">HOME</a>
-    <a href="SIT.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">AMSR2 Snow & Ice Volume</a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="SIT.html" class="w3-bar-item w3-button w3-padding-large">AMSR2 Ice Thickness</a>
         <div class="w3-dropdown-hover w3-hide-small">
-      <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
       <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
        <div class="row">
@@ -89,6 +87,13 @@ body {font-family: "Lato";
         </div>
         
       <div class="w3-dropdown-hover w3-hide-small">
+      <a href="Snow-Cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="snow-regional.html" class="w3-bar-item w3-button">Snow-Regional</a>
+        </div>
+        </div>
+        
+      <div class="w3-dropdown-hover w3-hide-small">
       <a href="IceSheets.html" class="w3-padding-large w3-button">Ice Sheets<i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="Bedrock.html" class="w3-bar-item w3-button">Greenland Bedrock</a>
@@ -100,7 +105,6 @@ body {font-family: "Lato";
     <div class="w3-dropdown-hover w3-hide-small">
       <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="Snow-Cover.html" class="w3-bar-item w3-button">Snow Covered Days</a>
         <a href="IceFreeDays.html" class="w3-bar-item w3-button">Ice Free Days</a>
         <a href="PastSIC.html" class="w3-bar-item w3-button">Past Ice Maps</a>
     </div>
@@ -112,9 +116,7 @@ body {font-family: "Lato";
 
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
 <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="index.html" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-  <a href="SIT.html" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">AMSR2 Snow & Ice Volume</a>
-  
+    <a href="IceSheets.html" class="w3-padding-large w3-button">Ice Sheets<i></i></a>
     <div class="w3-dropdown-hover">
   <a href="awp.html" class="w3-padding-large w3-button">Albedo-Warming Potential (AWP)<i class="fa fa-caret-down"></i></a>
     <div class="w3-dropdown-content w3-bar-block w3-card-4">
@@ -126,11 +128,17 @@ body {font-family: "Lato";
           <a href="NRT-icemelt.html" class="w3-bar-item w3-button">Ice-Melt NRT</a>
         </div>
         </div>
-  <a href="IceSheets.html" class="w3-padding-large w3-button">Ice Sheets<i></i></a>
+        
+  <div class="w3-dropdown-hover">
+      <a href="Snow-Cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="snow-regional.html" class="w3-bar-item w3-button">Snow-Regional</a>
+        </div>
+        </div>
+        
   <div class="w3-dropdown-hover">
   <button href="index.html" class="w3-padding-large w3-button" title="HOME">Analysis <i class="fa fa-caret-down"></i></button>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="Snow-Cover.html" class="w3-bar-item w3-button">Snow Covered Days</a>
         <a href="IceFreeDays.html" class="w3-bar-item w3-button">Ice Free Days</a>
         <a href="PastSIC.html" class="w3-bar-item w3-button">Past Ice Maps</a>
 </div>

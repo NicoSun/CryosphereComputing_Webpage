@@ -154,12 +154,14 @@ body {font-family: "Lato";
             <img src="https://drive.google.com/uc?id=1yKiFoWT6U0ZuTxQgWShBOZGVlpnvTZi7&export=download" class="w3-round" height="700">
           </div>
           <div class="w3-half">
-            <img src="https://drive.google.com/uc?id=1kJiNIH4rQC2vit5BlZp4KR1da21m6QBv&export=download" class="w3-round" style="width:100%">
+            <img src="https://drive.google.com/uc?id=15OGXivuDAQhX84a0x7v5Ddn1bp_SZ-qz&export=download" class="w3-round" height="700">
           </div>
           </div>
       <div class="w3-row w3-padding-12">
-      <div class="w3-half">
-            <img src="https://drive.google.com/uc?id=15OGXivuDAQhX84a0x7v5Ddn1bp_SZ-qz&export=download" class="w3-round" height="700">
+      <button onclick="showabsolute_values()" class="w3-button buttonstyle w3-padding-large">show graphs</button>
+      <div id="absolute_graphs">
+          <div class="w3-half">
+            <img src="https://drive.google.com/uc?id=1kJiNIH4rQC2vit5BlZp4KR1da21m6QBv&export=download" class="w3-round" style="width:100%">
           </div>
           <div class="w3-half">
             <img src="https://drive.google.com/uc?id=1Bt0b7sn2EPOUrt4NyRVsx0_EvXID6dUH&export=download" class="w3-round" style="width:100%">
@@ -232,6 +234,17 @@ function myFunction() {
     x.className += " w3-show";
   } else { 
     x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+showabsolute_values()
+// Used to toggle the region heatmap
+function showabsolute_values() {
+  var x = document.getElementById("absolute_graphs");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
   }
 }
 

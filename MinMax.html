@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Sea Ice Thickness</title>
+<title>Historic Sea Ice Concentration</title>
 <head>
 
 <link REL="SHORTCUT ICON" href="CC.ico" type="image/x-icon"> 
@@ -183,49 +183,36 @@ img {vertical-align: middle;}
 </div>
 
 
-    <!-- AMSR2 Snow & Ice Volume -->
-  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="SIT">
-    <h2 class="w3-wide">AMSR2 Snow & Ice Volume</h2>
-    <p class="w3-opacity"><i>A High Resolution Sea Ice & Snow Thickness estimation</i></p>
-  <div class="w3-row w3-padding-12">
-      <div class="w3-half">
-        <img src="https://drive.google.com/uc?id=1xcuLUVwQ7RqJb6SuNcO8xMhuPh9ejcbX&export=download" class="w3-round" style="width:100%">
-      </div>
-      <div class="w3-half">
-        <img src="https://drive.google.com/uc?id=1SGBN9wNsYESVgd8wah7WNdLjhwhrlPCv&export=download" class="w3-round" style="width:100%">
-      </div>
+    <!-- Arctic -->
+  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1600px" id="SIC">
+    <h2 class="w3-wide">Min / Max SIC values</h2>
+	<p class="w3-opacity"><i>This page shows the total sea ice variability combining all years since 1979 together.</p>
+	<p>
+	How to read the maps: If the low ice map shows ice cover then this area has never been icefree. <br>
+	  If the high ice map shows icefree area then this area was never ice covered. The high SIC images also show where measurement errors are most commonly found.
+	</i></p>
+	
+	<div class="w3-center">
+	<select id="North_South">
+	  <option value="Arctic">Arctic</option>
+	  <option value="Antarctic">Antarctic</option>
+	</select>
+	</div>
+	<div class="w3-half">
+	<img id="Arctic_Min" src="MinMax/NSIDC_Min_0901_north.png">
+	</div>
+	<div class="w3-half">
+	<img id="Arctic_Max" src="MinMax/NSIDC_Max_0901_north.png">
+	</div>
 
-      <div class="w3-half">
-        <img src="https://drive.google.com/uc?id=16WqNGeO8upArgIykm4iJQzRvLOzcqQP-&export=download" class="w3-round" style="width:100%">
-      </div>
-      <div class="w3-half">
-        <img src="https://drive.google.com/uc?id=1cAvpkr5A063Udr9eaJI_F55ZmHI2TmJB&export=download" class="w3-round" style="width:100%">
-      </div>
-    </div>
-  </div>
-  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1200px" id="SIT">
-  <img src="https://drive.google.com/uc?id=1Kk4XNJeQe7gitfTtGlLEINzG14Ex7C7i&export=download" class="w3-round" style="width:100%">
-  </div>
-  <hr>
-  
-<div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px">
-<h2 class="w3-wide">past months</h2>
-<p class="w3-opacity"><i>beginning in August 2012</i></p>
-<a href="https://github.com/NicoSun/ScienceData" class="w3-bar-item w3-button w3-padding-large">Data download</a>
-<div class="w3-row">
+		
+	
 
-<img id="past" src="ADS_Images/AMSR2_SIT_20120901.png">
-
-<div class="slidecontainer">
-    <span>Year:</span>
-    <span id="Yearselect" style="font-weight:bold;color:red">2012</span>
-  <input type="range" min="2012" max="2020" value="2012" class="slider" id="myRange" style="width:50%">
-</div>
 
 <div class="slidecontainer">
     <span>Month:</span>
     <span id="Monthselect" style="font-weight:bold;color:blue">9</span>
-  <input type="range" min="1" max="12" value="9" class="slider" id="myRange2" style="width:50%">
+  <input type="range" min="1" max="12.5" step="0.5" value="9" class="slider" id="myRange2" style="width:50%">
 </div>
 </div>
 
@@ -233,15 +220,10 @@ img {vertical-align: middle;}
   
 <div class="w3-center">
 <h2 class="w3-wide">Data used</h2>
-<p>Hori, M., H. Yabuki, T. Sugimura, T. Terui, 2012, AMSR2 Level 3 product of Daily Polar Brightness Temperatures and Product, 1.00, Arctic Data archive System (ADS), Japan, https://ads.nipr.ac.jp/dataset/A20170123-003</p>
+<p>Cavalieri, D. J., C. L. Parkinson, P. Gloersen, and H. J. Zwally. 1996, updated yearly. Sea Ice Concentrations from Nimbus-7 SMMR and DMSP SSM/I-SSMIS Passive Microwave Data, Version 1.1 Boulder, Colorado USA. NASA National Snow and Ice Data Center Distributed Active Archive Center. doi: https://doi.org/10.5067/8GQ8LZQVL0VL.</p>
 </div>
 <!-- End Page Content -->
 </div>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-8 w3-center w3-opacity w3-light-grey w3-xlarge">
-  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
 
 <script>
 function darkmode() {
@@ -251,45 +233,58 @@ function darkmode() {
 
 //-------------------------------------------
 
-// Dispalys Slider value
-var slider = document.getElementById("myRange");
-var output = document.getElementById("Yearselect");
-output.innerHTML = slider.value; // Display the default slider value
+var fileending = "north"
+var daystring = "01"
+var monthstring = "09"
+
 
 var slider2 = document.getElementById("myRange2");
 var output2 = document.getElementById("Monthselect");
 output2.innerHTML = slider2.value; // Display the default slider value
 
-var d = new Date();
-var currentyear = d.getFullYear();
-var currentmonth = d.getMonth();
-
-// Update for year slider
-slider.oninput = function() {
-output.innerHTML = this.value;
-
-	//update image
-	var imageid = "ADS_Images/AMSR2_SIT_" + slider.value + slider2.value.padStart(2, '0') + "01.png";
-	showimage(imageid);
-} 
 
 // Update for month slider
 slider2.oninput = function() {
 output2.innerHTML = this.value;
+daystring = checkInteger(parseFloat(this.value));
+monthstring = String(parseInt(this.value));
+monthstring = monthstring.padStart(2, '0');
 
 	//update image
-	var imageid = "ADS_Images/AMSR2_SIT_" + slider.value + slider2.value.padStart(2, '0') + "01.png";
-	showimage(imageid);
+	var imageMax = "MinMax/NSIDC_Max_" + monthstring + daystring + "_" + fileending + ".png";
+	var imageMin = "MinMax/NSIDC_Min_" + monthstring + daystring + "_" + fileending + ".png";
+	showimage(imageMax,imageMin);
 } 
 
-function showimage (imageid){
+var Hemisphere = document.getElementById("North_South");
+Hemisphere.onchange = function() {
+  if (this.value=="Arctic"){
+	fileending = "north"
+  }
+  else{
+	  fileending = "south"
+  }
+  //update image
+	var imageMax = "MinMax/NSIDC_Max_" + monthstring + daystring + "_" + fileending + ".png";
+	var imageMin = "MinMax/NSIDC_Min_" + monthstring + daystring + "_" + fileending + ".png";
+	showimage(imageMax,imageMin);
+}
 
-if((slider.value == 2012 && slider2.value < 8) || (slider.value == currentyear && slider2.value > currentmonth)){
-	imageid = "ADS_Images/NoData.png"
-} 
-document.getElementById("past").src = imageid;
+function showimage (imageMax,imageMin){
+
+document.getElementById("Arctic_Max").src = imageMax;
+document.getElementById("Arctic_Min").src = imageMin;
 
 }
+
+function checkInteger (num){
+if(Number.isInteger(num)){
+	return "01";
+	} 
+else{return "15";}
+}
+
+
 
 //------------------------------------------
 

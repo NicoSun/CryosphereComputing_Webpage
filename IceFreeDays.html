@@ -213,7 +213,7 @@ p.ex {
 <div class="slidecontainer">
     <span>Year:</span>
     <span id="Arctic_Yearselect" style="font-weight:bold;color:red">2000</span>
-  <input type="range" min="1979" max="2017" value="2000" class="slider" id="myRange_Arctic" style="width:66%">
+  <input type="range" min="1979" max="2019" value="2000" class="slider" id="myRange_Arctic" style="width:66%">
 </div>
 
    </div>
@@ -225,7 +225,7 @@ p.ex {
 <div class="w3-half">
   <p class="ex">Select individual years with the slider to view the difference with the long term mean.
    Ice Free is defined as having an ice concentration below 15%.  The baseline for anomaly calculation is 1979-2018</p>
-   <img src="IceFreeDays/Icefreedays_Mean.png" class="w3-round" style="width:100%">
+   <img src="IceFreeDays/Antarctic_IceFreeDays_Mean.png" class="w3-round" style="width:100%">
     </div>
 </div>
 
@@ -235,11 +235,11 @@ p.ex {
 
     <!-- Icefree Antarctic normal -->
 <div class="w3-half">
-<img id="normal_south" src="IceFreeDays/Icefreedays_2000.png" style="width:100%">
+<img id="normal_south" src="IceFreeDays/Antarctic_IceFreeDays_2000.png" style="width:100%">
 </div>
     <!-- Icefree Antarctic anomaly -->
 <div class="w3-half">
-<img id="anomaly_south" src="IceFreeDays/Icefreedays_anom_2000.png" style="width:100%">
+<img id="anomaly_south" src="IceFreeDays/Antarctic_IceFreeDays__anom_2000.png" style="width:100%">
 </div>
 
 </div>
@@ -250,7 +250,7 @@ p.ex {
 <div class="slidecontainer" >
     <span>Year:</span>
     <span id="Yearselect_south" style="font-weight:bold;color:red">2000</span>
-  <input type="range" min="1979" max="2017" value="2000" class="slider" id="myRange_south" style="width:66%">
+  <input type="range" min="1979" max="2019" value="2000" class="slider" id="myRange_south" style="width:66%">
 </div>
 </center>
 
@@ -307,8 +307,8 @@ slider.oninput = function() {
   output.innerHTML = this.value;
   
   //update image
-	var imageid = "IceFreeDays/Icefreedays_" + slider.value + ".png";
-	var imageid_anom = "IceFreeDays/Icefreedays_anom_" + slider.value + ".png";
+	var imageid = "IceFreeDays/Antarctic_IceFreeDays_" + slider.value + ".png";
+	var imageid_anom = "IceFreeDays/Antarctic_IceFreeDays__anom_" + slider.value + ".png";
 	showimage_south(imageid,imageid_anom);
 } 
 

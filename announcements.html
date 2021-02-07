@@ -140,16 +140,24 @@ body {font-family: "Lato";
 
     <!-- Sea Ice Area -->
   <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1200px">
-    <h2 class="w3-wide">What happend?</h2>    
+    <h2 class="w3-wide">AMSR2 2020 Update</h2>    
     <div class="col-sm-4">
     </div>
     <div class="col-sm-4">
-    <p class="w3-justify">My home was without internet for a week. It didn't just result in no updates I also missed the domain renewal for cryospherecomputing.tk;  That's why the website wasn't availabe at all. A few people missed the daily updates and contacted me about the issue. Thank you for your concern.</p>
-    <p class="w3-justify">It seems the website has grown beyond a personal programming exercise. To make it a more professional and reliable I decided to make changes to the background infrastructure. Currently the website is hosted on GitHub pages and the daily updated images are on Google drive. My only main computer runs the scheduled updates every day and uploads them to Google Drive. It works decently well, but if my internet goes down like last week there won’t be any updates. Windows updates can mess up regular schedules as well. </p>
-    <p class="w3-justify">My plan is to rent a virtual server and let it calculate all daily updates. Maybe it is even fast enough to host the entire website. In this case the website would be set up to offer more features like personalised graphs, a persistent dark mode, or entirely custom calculations. At the moment the website is just a collection of individual webpages and not a webserver.</p>
-    <p class="w3-justify">To pay for the server and an automatic domain renewal I set up a donation button to keep it running independently from my finances. Depending on how generous my visitors are I could spend more time on developing new content and features.</p>
-    <p class="w3-justify">There is only one domain provider for the .tk top level domain. Since the free domain period is over it makes no sense to be tied to this one provider. The plan is to switch to cryospherecomputing.com next year. When it happens, there will be a few months transition period where both domains work and an announcement on the homepage.</p>
-    </div>
+    <p class="w3-justify">The AMSR2 sea ice volume and thickness model will receive it's biggest update since release. Due to 
+     some more polishing work the February update will be slightly delayed </p>
+    <p class="w3-justify">The first major addition is a thickness anomaly map with an anomaly base of 2012-2020.
+     It will be updated every year because the current 8 years of available data is too short for a climatic baseline.</p>
+    <p class="w3-justify"> The second addition is a regional breakdown. I modelled the ADS region map after the NSIDC region map to keep it consistent with my AWP model.
+     In line with the region update the model also got an update to it's landmask. For an unknown reason the landmask in the daily data shifted around a bit and created
+      coastline error. From now on the model only counts gridcells with less than 40% landcover in the offically supplied landmask.
+       Also instead of all ice above 50N only sea ice in the shown regions will be considered in the volume and thickness data. Lake Ice will be ignored like in the NSIDC data. </p>
+       <p class="w3-justify">In the first image you can still see the coastline error which has been removed. The whole coastline is surrounded by white dots.</p>
+
+    <img src="w3_content/AMSR2_Mean_0201.png" class="w3-round" >
+    <img src="w3_content/AMSR2_SIT_Anomaly_2013-02-01.png" class="w3-round" >
+    <img src="w3_content/ADS_region_mask_40.png" class="w3-round" >
+</div>
     <div class="col-sm-4">
     </div>
   
@@ -173,7 +181,7 @@ body {font-family: "Lato";
 
 
 <script>
-
+darkmode()
 function darkmode() {
    var element = document.body;
    element.classList.toggle("dark-mode");

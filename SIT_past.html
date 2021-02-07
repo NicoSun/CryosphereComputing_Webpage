@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<title>Sea Ice Thickness</title>
+<title>Sea Ice Thickness Past</title>
 <head>
 
 <link REL="SHORTCUT ICON" href="CC.ico" type="image/x-icon"> 
@@ -192,29 +192,36 @@ img {vertical-align: middle;}
 
     <!-- AMSR2 Snow & Ice Volume -->
   <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1900px" id="SIT">
-    <h2 class="w3-wide">AMSR2 Snow & Ice Volume</h2>
-    <p class="w3-opacity"><i>A High Resolution Sea Ice & Snow Thickness estimation</i></p>
-  <div class="w3-row w3-padding-12">
-      <div class="w3-half">
-        <img src="https://drive.google.com/uc?id=1xcuLUVwQ7RqJb6SuNcO8xMhuPh9ejcbX&export=download" class="w3-round" style="width:100%">
-      </div>
-      <div class="w3-half">
-        <img src="https://drive.google.com/uc?id=1SGBN9wNsYESVgd8wah7WNdLjhwhrlPCv&export=download" class="w3-round" style="width:100%">
-      </div>
+    <h2 class="w3-wide">AMSR2 Snow & Ice Volume Past Years</h2>
+  <p class="w3-opacity"><i>beginning in August 2012</i></p>
+  <a href="https://github.com/NicoSun/ScienceData" class="w3-bar-item w3-button w3-padding-large">Data download</a>
+<div class="w3-row">
 
-      <div class="w3-half">
-        <img src="https://drive.google.com/uc?id=16WqNGeO8upArgIykm4iJQzRvLOzcqQP-&export=download" class="w3-round" style="width:100%">
-      </div>
-      <div class="w3-half">
-        <img src="https://drive.google.com/uc?id=1cAvpkr5A063Udr9eaJI_F55ZmHI2TmJB&export=download" class="w3-round" style="width:100%">
-      </div>
-    </div>
-  </div>
-  <div class="w3-container w3-content w3-center w3-padding-5" style="max-width:1200px" id="SIT">
-  <img src="https://drive.google.com/uc?id=1Kk4XNJeQe7gitfTtGlLEINzG14Ex7C7i&export=download" class="w3-round" style="width:100%">
-  </div>
+</div>
+	<div class="w3-half">
+	<img id="past" src="ADS_Images/AMSR2_SIT_2012-09-01.png">
+	</div>
+	<div class="w3-half">
+	<img id="past_anomaly" src="ADS_Images/AMSR2_SIT_Anomaly_2012-09-01.png">
+	</div>
+
+
+
+
+<div class="slidecontainer">
+    <span>Year:</span>
+    <span id="Yearselect" style="font-weight:bold;color:red">2012</span>
+  <input type="range" min="2012" max="2020" value="2012" class="slider" id="yearRange" style="width:50%">
+</div>
+
+<div class="slidecontainer">
+    <span>Month:</span>
+    <span id="Monthselect" style="font-weight:bold;color:blue">9</span>
+  <input type="range" min="1" max="12.5" step="0.5" value="9" class="slider" id="monthRange" style="width:50%">
+</div>
+</div>
+
   <hr>
-  
   
 <div class="w3-center">
 <h2 class="w3-wide">Data used</h2>
@@ -229,11 +236,78 @@ img {vertical-align: middle;}
 </footer>
 
 <script>
+darkmode();
+
 function darkmode() {
    var element = document.body;
    element.classList.toggle("dark-mode");
 }
 
+//-------------------------------------------
+
+// Displays a 404 error image if month is in future
+var d = new Date();
+var currentyear = d.getFullYear();
+var currentmonth = d.getMonth();
+
+var daystring = "01";
+var monthstring = "09";
+
+
+// Dispalys Slider value
+var slider = document.getElementById("yearRange");
+var output = document.getElementById("Yearselect");
+output.innerHTML = slider.value; // Display the default slider value
+
+var slider2 = document.getElementById("monthRange");
+var output2 = document.getElementById("Monthselect");
+output2.innerHTML = slider2.value; // Display the default slider value
+
+
+// Update for year slider
+slider.oninput = function() {
+output.innerHTML = this.value;
+
+	//update image
+	var imageid = "ADS_Images/AMSR2_SIT_" + slider.value + "-" + monthstring + "-" + daystring + ".png";
+	var imageid_anomaly = "ADS_Images/AMSR2_SIT_Anomaly_" + slider.value + "-" + monthstring + "-" + daystring + ".png";
+	showimage(imageid,imageid_anomaly);
+} 
+
+// Update for month slider
+slider2.oninput = function() {
+output2.innerHTML = this.value;
+
+daystring = checkInteger(parseFloat(this.value));
+monthstring = String(parseInt(this.value));
+monthstring = monthstring.padStart(2, '0');
+
+	//update image
+	var imageid = "ADS_Images/AMSR2_SIT_" + slider.value + "-" + monthstring + "-" + daystring + ".png";
+	var imageid_anomaly = "ADS_Images/AMSR2_SIT_Anomaly_" + slider.value + "-" + monthstring + "-" + daystring + ".png";
+	showimage(imageid,imageid_anomaly);
+} 
+
+
+
+
+function showimage (imageid,imageid_anomaly){
+
+if((slider.value == 2012 && slider2.value < 8) || (slider.value == currentyear && slider2.value > currentmonth)){
+	imageid = "ADS_Images/NoData.png";
+	imageid_anomaly = "ADS_Images/NoData.png";
+} 
+document.getElementById("past").src = imageid;
+document.getElementById("past_anomaly").src = imageid_anomaly;
+
+}
+
+function checkInteger (num){
+if(Number.isInteger(num)){
+	return "01";
+	} 
+else{return "15";}
+}
 
 //------------------------------------------
 

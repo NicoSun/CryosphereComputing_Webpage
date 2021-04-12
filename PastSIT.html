@@ -123,6 +123,7 @@ img {vertical-align: middle;}
       <a href="Snow-Cover.html" class="w3-padding-large w3-button">Snow <i class="fa fa-caret-down"></i></a>
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="snow-regional.html" class="w3-bar-item w3-button">Snow-Regional</a>
+        <a href="PastSnow.html" class="w3-bar-item w3-button">Past Snow Maps</a>
         </div>
         </div>
         
@@ -190,10 +191,10 @@ img {vertical-align: middle;}
 
 </div>
 	<div class="w3-half">
-	<img id="past" src="ADS_Images/AMSR2_SIT_2012-09-01.png">
+	<img id="past" src="Past_SIT/AMSR2_SIT_2012-09-01.png">
 	</div>
 	<div class="w3-half">
-	<img id="past_anomaly" src="ADS_Images/AMSR2_SIT_Anomaly_2012-09-01.png">
+	<img id="past_anomaly" src="Past_SIT/AMSR2_SIT_Anomaly_2012-09-01.png">
 	</div>
 
 
@@ -260,8 +261,8 @@ slider.oninput = function() {
 output.innerHTML = this.value;
 
 	//update image
-	var imageid = "ADS_Images/AMSR2_SIT_" + slider.value + "-" + monthstring + "-" + daystring + ".png";
-	var imageid_anomaly = "ADS_Images/AMSR2_SIT_Anomaly_" + slider.value + "-" + monthstring + "-" + daystring + ".png";
+	var imageid = "Past_SIT/AMSR2_SIT_" + slider.value + "-" + monthstring + "-" + daystring + ".png";
+	var imageid_anomaly = "Past_SIT/AMSR2_SIT_Anomaly_" + slider.value + "-" + monthstring + "-" + daystring + ".png";
 	showimage(imageid,imageid_anomaly);
 } 
 
@@ -274,8 +275,8 @@ monthstring = String(parseInt(this.value));
 monthstring = monthstring.padStart(2, '0');
 
 	//update image
-	var imageid = "ADS_Images/AMSR2_SIT_" + slider.value + "-" + monthstring + "-" + daystring + ".png";
-	var imageid_anomaly = "ADS_Images/AMSR2_SIT_Anomaly_" + slider.value + "-" + monthstring + "-" + daystring + ".png";
+	var imageid = "Past_SIT/AMSR2_SIT_" + slider.value + "-" + monthstring + "-" + daystring + ".png";
+	var imageid_anomaly = "Past_SIT/AMSR2_SIT_Anomaly_" + slider.value + "-" + monthstring + "-" + daystring + ".png";
 	showimage(imageid,imageid_anomaly);
 } 
 
@@ -286,7 +287,7 @@ function showimage (imageid,imageid_anomaly){
 
 if((slider.value == 2012 && slider2.value < 8) || (slider.value == currentyear && slider2.value > currentmonth)){
 	imageid = "ADS_Images/NoData.png";
-	imageid_anomaly = "ADS_Images/NoData.png";
+	imageid_anomaly = "Past_SIT/NoData.png";
 } 
 document.getElementById("past").src = imageid;
 document.getElementById("past_anomaly").src = imageid_anomaly;

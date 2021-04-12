@@ -180,7 +180,7 @@ img {vertical-align: middle;}
 	<p class="w3-opacity"><i>beginning in January 1979</i></p>
 	<a href="https://github.com/NicoSun/ScienceData" class="w3-bar-item w3-button w3-padding-large">Data download</a>
 	<div class="w3-row">
-		<img id="past_Arctic" src="Historic_Sea_Ice/NSIDC_20120915_north.png">
+		<img id="past_Arctic" src="Past_SIC/NSIDC_20120915_north.png">
 		<div class="w3-row">
 		
 	<select id="North_South">
@@ -236,7 +236,7 @@ slider.oninput = function() {
 output.innerHTML = this.value;
 
 	//update image
-	var imageid = "Historic_Sea_Ice/NSIDC_" + slider.value + monthstring + daystring + "_" + fileending + ".png";
+	var imageid = "Past_SIC/NSIDC_" + slider.value + monthstring + daystring + "_" + fileending + ".png";
 	showimage(imageid);
 } 
 
@@ -248,7 +248,7 @@ monthstring = String(parseInt(this.value));
 monthstring = monthstring.padStart(2, '0');
 
 	//update image
-	var imageid = "Historic_Sea_Ice/NSIDC_" + slider.value + monthstring + daystring + "_" + fileending + ".png";
+	var imageid = "Past_SIC/NSIDC_" + slider.value + monthstring + daystring + "_" + fileending + ".png";
 	showimage(imageid);
 } 
 
@@ -261,7 +261,7 @@ Hemisphere.onchange = function() {
 	  fileending = "south"
   }
   //update image
-	var imageid = "Historic_Sea_Ice/NSIDC_" + slider.value + monthstring + daystring + "_" + fileending + ".png";
+	var imageid = "Past_SIC/NSIDC_" + slider.value + monthstring + daystring + "_" + fileending + ".png";
 	showimage(imageid);
 }
 

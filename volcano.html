@@ -37,6 +37,11 @@ hr {
   height: 923px; /*should be the same height as the images*/
 }
 
+.img-comp-container2 {
+  position: relative;
+  height: 1387px; /*should be the same height as the images*/
+}
+
 
 .img-comp-img {
   position: absolute;
@@ -246,6 +251,21 @@ function initComparisons() {
     <p class="w3-opacity"><i>Sentinel2 RGB colour image with an infrared overlay. Infrared reveals active lava flows beneath the dark surface.</i></p>
     Opacity(%): <input type="number" id="myText" value="66" min="0" max="100">
     <button onclick="setOpacity()">Set</button>
+    
+    <!-- Image -->
+    <div class="w3-row w3-padding-12" w3-center">
+    <div class="img-comp-container2">
+       <div class="img-comp-img">
+        <img src="static/Volcano_20210626_RGB.png" width="1716" height="1387">
+      </div>
+      <div class="img-comp-img img-comp-overlay">
+        <img id="aaa" src="static/Volcano_20210626_Infra.png" width="1716" height="1387">
+      </div>
+      </div>
+      <p class="w3-opacity"><i>Date: 2021-06-26</i></p>
+      <hr>
+      
+        <!-- Image -->
     <div class="w3-row w3-padding-12" w3-center">
     <div class="img-comp-container">
        <div class="img-comp-img">
@@ -254,18 +274,19 @@ function initComparisons() {
       <div class="img-comp-img img-comp-overlay">
         <img id="aaa" src="static/Volcano_20210509_Infra.png" width="1199" height="923">
       </div>
-      
+      </div>
       </div>
       <p class="w3-opacity"><i>Date: 2021-05-09</i></p>
       <hr>
+      
+              <!-- Image -->  
       <div class="img-comp-container">
        <div class="img-comp-img">
         <img src="static/Volcano_20210504_RGB.png" width="1199" height="923">
       </div>
       <div class="img-comp-img img-comp-overlay">
         <img id="aaa" src="static/Volcano_20210504_Infra.png" width="1199" height="923">
-      </div>
-      
+      </div> 	
       </div>
       <p class="w3-opacity"><i>Date: 2021-05-04</i></p>
       <hr>
@@ -285,6 +306,7 @@ function initComparisons() {
 </footer>
 
 <script>
+darkmode()
 function darkmode() {
    var element = document.body;
    element.classList.toggle("dark-mode");
